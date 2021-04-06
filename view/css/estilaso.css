@@ -1,0 +1,187 @@
+/*------------------------------------------------/
+						COLORES
+--------------------------------------------------/
+#34495E AZUL PRINCIPAL
+
+
+
+*//*------------------------------------------------/
+						FUENTES
+--------------------------------------------------*/
+a,b,p, h1,h2,h3{
+	font-family: "Josefin Sans";
+	text-decoration: none;
+}
+@font-face{
+	font-family: "Josefin Sans";
+	src: url(JosefinSans-VariableFont_wght.ttf) format('truetype');
+}
+
+/*---------------------------------------------------
+				MAIN
+-----------------------------------------------------*/
+body{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+main{
+	justify-content: center;
+	align-items: center;
+}
+/*---------------------------------------------------
+				HEADER
+-----------------------------------------------------*/
+
+.header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 4rem;
+	margin-top: 1rem;
+
+}
+
+.header span{
+	width: 1rem;
+	padding-right: 4.5rem;
+}
+
+.header h1{
+	display: flex;
+	font-family: "Josefin Sans", sans-serif;
+	color: #34495E;
+}
+.header i{
+	position: relative;
+	display: flex;
+}
+/*---------------------------------------------------
+				NOITCIAS
+-----------------------------------------------------*/
+.noticia .contenedor{
+	margin-top: 1rem;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+	overflow: hidden;
+}
+ 
+
+.noticia .contenedor-text{
+    position: absolute;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    top: 60%;
+	left: 50vw;
+    transform: translate(-50%, -50%);
+	font-family: "Josefin sans";
+	color: #34495E;
+	
+}
+.contenedor-text b{
+	font-size: 2rem;
+}
+.contenedor-text p{
+	font-size: 1rem;
+}
+.noticia .contenedor img{
+	height: 18rem;
+	width: 100vw;
+	object-fit: cover;
+	opacity: 0.5;
+}
+
+/*---------------------------------------------------
+				NAV MENU
+-----------------------------------------------------*/
+
+.nav-menu{
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 1rem;
+	max-width: 80rem;
+	margin: auto;
+}
+.nav-menu div{
+	display: flex;
+	flex-direction: column;
+	background-color: #34495E;
+	flex: 1 1 8rem;
+	height: 8rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 0.4rem;
+}
+.nav-menu div a{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.nav-menu div:hover{
+	opacity: 0.8;
+}
+.nav-menu .nav-sel a{
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	margin: auto;
+	text-decoration: none;
+	list-style: none;
+	color: white;
+}
+
+.nav-menu .nav-sel a b{
+	text-align: center;
+}
+/*---------------------------------------------------
+				MODULOS
+-----------------------------------------------------*/
+hr{
+	color:black;
+	size: 3;
+	width: 90%;
+}
+
+.modulos{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding: 7vh;
+}
+
+
+
+/*---------------------------------------------------
+				FOOTER
+-----------------------------------------------------*/
+footer{
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	align-items: center;
+	height: 12rem;
+	background-color: #34495E;
+	padding-left: 4rem;
+}
+footer div{
+	flex: 1;
+}
+footer div ul{
+	list-style: none;
+	color: white;
+}
+footer div ul li a{
+	color: white;
+}
+footer div img{
+	width: 5.5rem;	
+}
+.footer-accesos {
+	padding-bottom: 5rem;
+}
