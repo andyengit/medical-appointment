@@ -3,7 +3,7 @@
 </div>
 <div>
 	<form>
-		<p>Ingrese su CI</p>
+		<p>Ingrese su CEDULA DE IDENTIDAD</p>
 		<input type="text" name="ci">
 		<br/>
 		<p>Ingrese la especialidad</p>
