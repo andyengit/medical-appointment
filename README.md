@@ -11,4 +11,4 @@ Nuestro proyecto se basa en una pagina web donde un usuario pueda obtener una ci
 
 Este proyecto surge de debido a esta pandemia para poder citar con algún doctor se debe dirigir al consultorio de manera presencial, haciendo colas donde puede propagarse el virus fácilmente. También entra como necesidad para facilitar este tipo de diligencias para personas que se les dificulta salir de sus hogares.
 
-Este cambio lo hice yo :), otro
+conflicto
