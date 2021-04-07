@@ -168,6 +168,23 @@ hr{
 	margin: 1rem;
 }
 
+.alert_red {
+	color: red;
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	margin: 1rem;
+	margin-top: .5rem;
+}
+
+.alert_green {
+	color: green;
+	display: block;
+	margin: 2rem;
+	width: 100%;
+	text-align: center;
+}
+
 /*---------------------------------------------------
 				FOOTER
 -----------------------------------------------------*/
