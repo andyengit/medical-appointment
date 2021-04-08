@@ -12,6 +12,14 @@ a,b,p, h1,h2,h3{
 	font-family: "Josefin Sans";
 	text-decoration: none;
 }
+
+h4 {
+	font-family: "Josefin Sans";
+	margin-top:50px;
+	font-size:20px;
+	text-align:center;
+}
+
 @font-face{
 	font-family: "Josefin Sans";
 	src: url(JosefinSans-VariableFont_wght.ttf) format('truetype');
@@ -140,36 +148,96 @@ main{
 hr{
 	color:black;
 	size: 3;
-	width: 90%;
+	width: 100%;
 }
 
-.modulos{
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+.modulos h2 {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.modulos form p {
+	height:4rem;
+	text-align:center;
+	font-size:18px;
+	line-height: 4rem;
+	font-family: "Josefin sans";
+}
+
+.modulos a {
+	color:#fff;
+	text-decoration:none;
+}
+
+.modulos a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+
+#register-form {
+	width:60%;
+	background:#34495E;
+	padding: 1.9rem;
+	margin: auto;
+	margin-top:2rem;
+	margin-bottom: 6rem;
+	border-radius: 2rem;
+	color:#fff;
+	box-shadow:7px 13px 37px #000;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: auto;
-	padding: 7vh;
+}
+
+#register-form .botons {
+	width:100%;
+	background:#1f53c5;
+	border:none;
+	padding:1rem;
+	color:rgba(255, 255, 255, 0.938);
+	margin:1.2rem 0;
+	font-size:16px;
+	border-radius: .5rem;
+	cursor: pointer;
+}
+
+#register-form .botons:hover {
+	background:#406bc7;
+	color:#fff;
+}
+
+
+/*---------------------------------------------------
+				CAMPOS
+-----------------------------------------------------*/
+
+.data {
+	font-family: "Josefin sans";
+	width:100%;
+	background:#fff;
+	padding:10px;
+	border-radius:4px;
+	margin-bottom:16px;
+	border:1px solid #1f53c5;
+	font-size:18px;
 }
 
 #register-form {
 	display: block;
-	width: 75%;
-}
-
-#register-form label {
-	display: inline;
-	width: 100%;
-	margin: 1rem;
 }
 
 #register-form input {
 	display: inline-block;
-	width: 100%;
-	margin: 1rem;
 }
 
-.alert_red {
-	color: red;
+.alert_warning {
+	color: rgb(255, 136, 0);
 	display: inline-block;
 	width: 100%;
 	text-align: right;
@@ -177,10 +245,9 @@ hr{
 	margin-top: .5rem;
 }
 
-.alert_green {
-	color: green;
+.alert_success {
+	color: rgb(4, 175, 4);
 	display: block;
-	margin: 2rem;
 	width: 100%;
 	text-align: center;
 }
