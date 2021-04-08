@@ -14,6 +14,8 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
 <!--CONTENIDO-->
 <hr>
 <section class="modulos">
+    <h2>Registro</h2>
+
 	<form method="POST" action="controllers/register.php" id="register-form">
         <label for="name">Nombre:</label>
         <input 
@@ -22,7 +24,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         > 
         <?php
         if(isset($_SESSION["nameErr"])):?>
-            <strong class="alert_red"><?= $_SESSION["nameErr"] ?></strong>
+            <strong class="alert_warning"><?= $_SESSION["nameErr"] ?></strong>
         <?php 
         endif;
         ?>
@@ -34,7 +36,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         >
         <?php
         if(isset($_SESSION["lastNameErr"])):?>
-            <strong class="alert_red"><?= $_SESSION["lastNameErr"] ?></strong>
+            <strong class="alert_warning"><?= $_SESSION["lastNameErr"] ?></strong>
         <?php 
         endif;
         ?>
@@ -46,7 +48,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         >
         <?php
         if(isset($_SESSION["ciErr"])):?>
-            <strong class="alert_red"><?= $_SESSION["ciErr"] ?></strong>
+            <strong class="alert_warning"><?= $_SESSION["ciErr"] ?></strong>
         <?php 
         endif;
         ?>
@@ -59,7 +61,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         >
         <?php
         if(isset($_SESSION["emailErr"])):?>
-            <strong class="alert_red"><?= $_SESSION["emailErr"] ?></strong>
+            <strong class="alert_warning"><?= $_SESSION["emailErr"] ?></strong>
         <?php 
         endif;
         ?>
@@ -68,7 +70,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <input class="data" type="password" id="password" name="password">
         <?php
         if(isset($_SESSION["passwordErr"])):?>
-            <strong class="alert_red"><?= $_SESSION["passwordErr"] ?></strong>
+            <strong class="alert_warning"><?= $_SESSION["passwordErr"] ?></strong>
         <?php 
         endif;
         ?>
@@ -76,14 +78,16 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <input class="botons" type="submit" value="Regístrate">
 
         <p><a href="#">¿Ya tengo una cuenta?</a></p>
+
+        <?php
+        if(isset($register) && $register):?>
+            <strong class="alert_success">Registro completado correctamente.</strong>
+        <?php 
+            endif;
+        ?>
     </form>
 
-    <?php
-    if(isset($register) && $register):?>
-        <strong class="alert_green">Registro completado correctamente.</strong>
-    <?php 
-        endif;
-    ?>
+    
 
 </section>
 
