@@ -17,7 +17,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
 	<form method="POST" action="controllers/register.php" id="register-form">
         <label for="name">Nombre:</label>
         <input 
-            type="text" id="name" name="name" 
+            class="data" type="text" id="name" name="name" 
             value="<?= $_SESSION['name'] ? $_SESSION['name'] : '' ?>"
         > 
         <?php
@@ -29,7 +29,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
 
         <label for="lastname">Apellido:</label>
         <input 
-            type="text" id="lastname" name="lastname" 
+            class="data" type="text" id="lastname" name="lastname" 
             value="<?= $_SESSION['lastName'] ? $_SESSION['lastName'] : '' ?>"
         >
         <?php
@@ -41,7 +41,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         
         <label for="CI">Cedula de Identidad:</label>
         <input 
-            type="text" id="CI" name="CI" 
+            class="data" type="text" id="CI" name="CI" 
             value="<?= $_SESSION['ci'] ? $_SESSION['ci'] : '' ?>"
         >
         <?php
@@ -54,7 +54,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
 
         <label for="email">Correo Electrónico:</label>
         <input 
-            type="email" id="email" name="email" 
+            class="data" type="email" id="email" name="email" 
             value="<?= $_SESSION['email'] ? $_SESSION['email'] : '' ?>"
         >
         <?php
@@ -65,7 +65,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         ?>
 
         <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password">
+        <input class="data" type="password" id="password" name="password">
         <?php
         if(isset($_SESSION["passwordErr"])):?>
             <strong class="alert_red"><?= $_SESSION["passwordErr"] ?></strong>
@@ -73,7 +73,9 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         endif;
         ?>
 
-        <input type="submit" value="Regístrate">
+        <input class="botons" type="submit" value="Regístrate">
+
+        <p><a href="#">¿Ya tengo una cuenta?</a></p>
     </form>
 
     <?php
