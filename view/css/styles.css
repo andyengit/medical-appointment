@@ -22,7 +22,7 @@ h4 {
 
 @font-face{
 	font-family: "Josefin Sans";
-	src: url(JosefinSans-VariableFont_wght.ttf) format('truetype');
+	src: url(view/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
 }
 
 /*---------------------------------------------------
