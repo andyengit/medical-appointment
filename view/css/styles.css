@@ -157,26 +157,16 @@ hr{
 	box-sizing:border-box;
 }
 
-.modulos {
-	width:60%;
-	background:#34495E;
-	padding: 30px;
-	margin: auto;
-	margin-top:50px;
-	margin-bottom:100px;
-	border-radius:4px;
-	color:#fff;
-	box-shadow:7px 13px 37px #000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.modulos h2 {
+	margin-top: 1rem;
+	text-align: center;
 }
 
-.modulos p {
-	height:40px;
+.modulos form p {
+	height:4rem;
 	text-align:center;
 	font-size:18px;
-	line-height:40px;
+	line-height: 4rem;
 	font-family: "Josefin sans";
 }
 
@@ -190,15 +180,38 @@ hr{
 	text-decoration:underline;
 }
 
-.modulos .botons {
+#register-form {
+	width:60%;
+	background:#34495E;
+	padding: 1.9rem;
+	margin: auto;
+	margin-top:2rem;
+	margin-bottom: 6rem;
+	border-radius: 2rem;
+	color:#fff;
+	box-shadow:7px 13px 37px #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#register-form .botons {
 	width:100%;
 	background:#1f53c5;
 	border:none;
-	padding:12px;
-	color:#fff;
-	margin:16px 0;
+	padding:1rem;
+	color:rgba(255, 255, 255, 0.938);
+	margin:1.2rem 0;
 	font-size:16px;
+	border-radius: .5rem;
+	cursor: pointer;
 }
+
+#register-form .botons:hover {
+	background:#406bc7;
+	color:#fff;
+}
+
 
 /*---------------------------------------------------
 				CAMPOS
@@ -223,8 +236,8 @@ hr{
 	display: inline-block;
 }
 
-.alert_red {
-	color: red;
+.alert_warning {
+	color: rgb(255, 136, 0);
 	display: inline-block;
 	width: 100%;
 	text-align: right;
@@ -232,10 +245,9 @@ hr{
 	margin-top: .5rem;
 }
 
-.alert_green {
-	color: green;
+.alert_success {
+	color: rgb(4, 175, 4);
 	display: block;
-	margin: 2rem;
 	width: 100%;
 	text-align: center;
 }
