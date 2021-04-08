@@ -20,11 +20,11 @@ if(empty($_POST["lastname"])) {
 }else 
     $lastName = testInput($_POST["lastname"]);
 
-if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+if (!preg_match("/^[a-zA-Z' ]*$/", $name)) {
     $nameErr = "Introduzca solamente letras y espacios.";
     $errors = true;
 }
-if (!preg_match("/^[a-zA-Z-' ]*$/", $lastName)){
+if (!preg_match("/^[a-zA-Z' ]*$/", $lastName)){
     $lastNameErr = "Introduzca solamente letras y espacios.";
     $errors = true;
 }
