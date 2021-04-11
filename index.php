@@ -20,7 +20,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <label for="name">Nombre:</label>
         <input 
             class="data" type="text" id="name" name="name" 
-            value="<?= $_SESSION['name'] ? $_SESSION['name'] : '' ?>"
+            value="<?= isset($_SESSION['name']) ? $_SESSION['name'] : '' ?>"
         > 
         <?php
         if(isset($_SESSION["nameErr"])):?>
@@ -32,7 +32,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <label for="lastname">Apellido:</label>
         <input 
             class="data" type="text" id="lastname" name="lastname" 
-            value="<?= $_SESSION['lastName'] ? $_SESSION['lastName'] : '' ?>"
+            value="<?= isset($_SESSION['lastName']) ? $_SESSION['lastName'] : '' ?>"
         >
         <?php
         if(isset($_SESSION["lastNameErr"])):?>
@@ -44,7 +44,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <label for="CI">Cedula de Identidad:</label>
         <input 
             class="data" type="text" id="CI" name="CI" 
-            value="<?= $_SESSION['ci'] ? $_SESSION['ci'] : '' ?>"
+            value="<?= isset($_SESSION['ci']) ? $_SESSION['ci'] : '' ?>"
         >
         <?php
         if(isset($_SESSION["ciErr"])):?>
@@ -57,7 +57,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
         <label for="email">Correo Electrónico:</label>
         <input 
             class="data" type="email" id="email" name="email" 
-            value="<?= $_SESSION['email'] ? $_SESSION['email'] : '' ?>"
+            value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
         >
         <?php
         if(isset($_SESSION["emailErr"])):?>
