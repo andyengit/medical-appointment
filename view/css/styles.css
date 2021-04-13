@@ -25,17 +25,11 @@ h4 {
 	src: url(view/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
 }
 
-/*---------------------------------------------------
-				MAIN
------------------------------------------------------*/
-body{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+table {
+	display: block;
 }
-main{
-	justify-content: center;
-	align-items: center;
+table tr{
+	border-top: 1px solid;
 }
 /*---------------------------------------------------
 				HEADER
@@ -283,3 +277,7 @@ footer div img{
 .footer-accesos {
 	padding-bottom: 5rem;
 }
+
+/*---------------------------------------------------
+				FOOTER
+-----------------------------------------------------*/

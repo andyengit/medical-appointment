@@ -38,8 +38,8 @@
                     <div class="nav-sel"><a href="index.php"><span><img src="view/img/casa.png"></span><b>INICIO</b></a></div>
                     <div class="nav-sel"><a href="index.php?go=reservar"><span><img src="view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
                     <div class="nav-sel"><a href="index.php?go=examenes"><span><img src="view/img/jeringa.png" alt=""></span><b>RESERVAR EXÁMENES</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=resultados"><span><img src="view/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=nosotros"><span><img src="view/img/doc.png" alt=""></span><b>CONÓCENOS</b></a></div>
+                    <div class="nav-sel"><a href="view/modulos/resultados.php"><span><img src="view/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
+                    <div class="nav-sel"><a href=""><span><img src="view/img/doc.png" alt=""></span><b>CONÓCENOS</b></a></div>
                 </section>
             </main>
         </header>
