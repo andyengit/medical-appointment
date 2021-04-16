@@ -8,6 +8,13 @@
 *//*------------------------------------------------/
 						FUENTES
 --------------------------------------------------*/
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
 a,b,p, h1,h2,h3{
 	font-family: "Josefin Sans";
 	text-decoration: none;
@@ -22,7 +29,7 @@ h4 {
 
 @font-face{
 	font-family: "Josefin Sans";
-	src: url(view/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
+	src: url(http://localhost/proyecto/view/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
 }
 
 table {
@@ -52,10 +59,7 @@ table tr{
 	display: flex;
 	font-family: "Josefin Sans", sans-serif;
 	color: #34495E;
-}
-.header i{
-	position: relative;
-	display: flex;
+	margin-top: 1rem;
 }
 /*---------------------------------------------------
 				NOITCIAS
@@ -134,6 +138,7 @@ table tr{
 }
 
 .nav-menu .nav-sel a b{
+	padding-top: 0.5rem;
 	text-align: center;
 }
 /*---------------------------------------------------
@@ -145,11 +150,7 @@ hr{
 	width: 100%;
 }
 
-* {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-}
+
 
 .modulos h2 {
 	margin-top: 1rem;
@@ -279,5 +280,44 @@ footer div img{
 }
 
 /*---------------------------------------------------
-				FOOTER
+				resultados.php
 -----------------------------------------------------*/
+.tab-crud{
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.tab-crud th{
+	flex: 1;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-top: .5rem;
+	padding-bottom: 0.5rem;
+	background-color: #34495E;
+	color: white;
+}
+.tab-crud td{
+	flex: 1;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.tab-crud tr:hover{
+	background-color: #406bc7;
+
+}
+.tab-crud td button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: 0.3rem;
+	background-color: white;
+	border-radius: .4rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}

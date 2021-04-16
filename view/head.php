@@ -19,14 +19,14 @@
             <main class="body">
                 <!--HEADER-->
                 <div class="header">
-                    <span><img src="view/img/icon.png" alt="REVEMED"></span>
+                    <span><img src="http://localhost/proyecto/view/img/icon.png" alt="REVEMED"></span>
                     <h1>REVEMED</h1>
                 </div>
                 <!--NOTICIAS-->
                 <section class="noticia">
                     <div class="sombra"></div>
                     <div class="contenedor">
-                        <img src="view/img/noticia.jpg" />
+                        <img src="http://localhost/proyecto/view/img/noticia.jpg" />
                         <div class="contenedor-text">
                             <b>TU NUEVO PORTAL PARA AGENDAR CITAS MÉDICAS</b>
                             <p>CON LOS DOCTORES Y CENTROS MÉDICOS DE TU PREFERENCIA</p>
@@ -35,11 +35,11 @@
                 </section>
                 <!--NAVEGACION-->
                 <section class="nav-menu">
-                    <div class="nav-sel"><a href="index.php"><span><img src="view/img/casa.png"></span><b>INICIO</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=reservar"><span><img src="view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=examenes"><span><img src="view/img/jeringa.png" alt=""></span><b>RESERVAR EXÁMENES</b></a></div>
-                    <div class="nav-sel"><a href="view/modulos/resultados.php"><span><img src="view/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
-                    <div class="nav-sel"><a href=""><span><img src="view/img/doc.png" alt=""></span><b>CONÓCENOS</b></a></div>
+                    <div class="nav-sel"><a href="index.php"><span><img src="http://localhost/proyecto/view/img/casa.png"></span><b>INICIO</b></a></div>
+                    <div class="nav-sel"><a href="index.php?go=reservar"><span><img src="http://localhost/proyecto/view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
+                    <div class="nav-sel"><a href="index.php?go=examenes"><span><img src="http://localhost/proyecto/view/img/jeringa.png"></span><b>RESERVAR EXÁMENES</b></a></div>
+                    <div class="nav-sel"><a href="view/modulos/resultados.php"><span><img src="http://localhost/proyecto/view/img/libro.png" ></span><b>CONSULTAR CITA</b></a></div>
+                    <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/view/img/doc.png"></span><b>CONÓCENOS</b></a></div>
                 </section>
             </main>
         </header>
