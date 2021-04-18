@@ -1,0 +1,323 @@
+/*------------------------------------------------/
+						COLORES
+--------------------------------------------------/
+#34495E AZUL PRINCIPAL
+
+
+
+*//*------------------------------------------------/
+						FUENTES
+--------------------------------------------------*/
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+a,b,p, h1,h2,h3{
+	font-family: "Josefin Sans";
+	text-decoration: none;
+}
+
+h4 {
+	font-family: "Josefin Sans";
+	margin-top:50px;
+	font-size:20px;
+	text-align:center;
+}
+
+@font-face{
+	font-family: "Josefin Sans";
+	src: url(http://localhost/proyecto/view/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
+}
+
+table {
+	display: block;
+}
+table tr{
+	border-top: 1px solid;
+}
+/*---------------------------------------------------
+				HEADER
+-----------------------------------------------------*/
+
+.header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 4rem;
+	margin-top: 1rem;
+}
+
+.header span{
+	width: 1rem;
+	padding-right: 4rem;
+}
+
+.header h1{
+	display: flex;
+	font-family: "Josefin Sans", sans-serif;
+	color: #34495E;
+	margin-top: 1rem;
+}
+/*---------------------------------------------------
+				NOITCIAS
+-----------------------------------------------------*/
+.noticia .contenedor{
+	margin-top: 1rem;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+	overflow: hidden;
+}
+ 
+
+.noticia .contenedor-text{
+    position: absolute;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    top: 60%;
+	left: 50vw;
+    transform: translate(-50%, -50%);
+	font-family: "Josefin sans";
+	color: #34495E;
+	
+}
+.contenedor-text b{
+	font-size: 2rem;
+}
+.contenedor-text p{
+	font-size: 1rem;
+}
+.noticia .contenedor img{
+	height: 18rem;
+	width: 100vw;
+	object-fit: cover;
+	opacity: 0.5;
+}
+
+/*---------------------------------------------------
+				NAV MENU
+-----------------------------------------------------*/
+
+.nav-menu{
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 1rem;
+	max-width: 80rem;
+	margin: auto;
+}
+.nav-menu div{
+	display: flex;
+	flex-direction: column;
+	background-color: #34495E;
+	flex: 1 1 8rem;
+	height: 8rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 0.4rem;
+}
+.nav-menu div a{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.nav-menu div:hover{
+	opacity: 0.8;
+}
+.nav-menu .nav-sel a{
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	margin: auto;
+	text-decoration: none;
+	list-style: none;
+	color: white;
+}
+
+.nav-menu .nav-sel a b{
+	padding-top: 0.5rem;
+	text-align: center;
+}
+/*---------------------------------------------------
+				MODULOS
+-----------------------------------------------------*/
+hr{
+	color:black;
+	size: 3;
+	width: 100%;
+}
+
+
+
+.modulos h2 {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.modulos form p {
+	height:4rem;
+	text-align:center;
+	font-size:18px;
+	line-height: 4rem;
+	font-family: "Josefin sans";
+}
+
+.modulos a {
+	color:#fff;
+	text-decoration:none;
+}
+
+.modulos a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+
+#register-form {
+	width:60%;
+	background:#34495E;
+	padding: 1.9rem;
+	margin: auto;
+	margin-top:2rem;
+	margin-bottom: 6rem;
+	border-radius: 2rem;
+	color:#fff;
+	box-shadow:7px 13px 37px #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#register-form .botons {
+	width:100%;
+	background:#1f53c5;
+	border:none;
+	padding:1rem;
+	color:rgba(255, 255, 255, 0.938);
+	margin:1.2rem 0;
+	font-size:16px;
+	border-radius: .5rem;
+	cursor: pointer;
+}
+
+#register-form .botons:hover {
+	background:#406bc7;
+	color:#fff;
+}
+
+
+/*---------------------------------------------------
+				CAMPOS
+-----------------------------------------------------*/
+
+.data {
+	font-family: "Josefin sans";
+	width:100%;
+	background:#fff;
+	padding:10px;
+	border-radius:4px;
+	margin-bottom:16px;
+	border:1px solid #1f53c5;
+	font-size:18px;
+}
+
+#register-form {
+	display: block;
+}
+
+#register-form input {
+	display: inline-block;
+}
+
+.alert_warning {
+	color: rgb(255, 136, 0);
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	margin: 1rem;
+	margin-top: .5rem;
+}
+
+.alert_success {
+	color: rgb(4, 175, 4);
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+/*---------------------------------------------------
+				FOOTER
+-----------------------------------------------------*/
+footer{
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	align-items: center;
+	height: 12rem;
+	background-color: #34495E;
+	padding-left: 4rem;
+}
+footer div{
+	flex: 1;
+}
+footer div ul{
+	list-style: none;
+	color: white;
+}
+footer div ul li a{
+	color: white;
+}
+footer div img{
+	width: 5.5rem;	
+}
+.footer-accesos {
+	padding-bottom: 5rem;
+}
+
+/*---------------------------------------------------
+				resultados.php
+-----------------------------------------------------*/
+.tab-crud{
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.tab-crud th{
+	flex: 1;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-top: .5rem;
+	padding-bottom: 0.5rem;
+	background-color: #34495E;
+	color: white;
+}
+.tab-crud td{
+	flex: 1;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.tab-crud tr:hover{
+	background-color: #406bc7;
+
+}
+.tab-crud td button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: 0.3rem;
+	background-color: white;
+	border-radius: .4rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
