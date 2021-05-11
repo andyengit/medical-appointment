@@ -1,6 +1,5 @@
-<?php require("../head.php") ?>
-<style rel="stylesheet" type="text/css"> 
-            <?php include_once("../css/styles.css")?>
+<section class="body">
+            <div class="cont">
 </style> 
 <table class="tab-crud">
 		<tr>
@@ -17,7 +16,7 @@
 			<td>Armeya</td>
 			<td>anderson@example.com</td>
 			<td><button>U</button></td>
-			<td><button>D</button></td>
+			<td><button>X</button></td>
 		</tr>
 		<tr>
 			<td>30072048</td>
@@ -25,7 +24,7 @@
 			<td>Megurdijian</td>
 			<td>nataly@example.com</td>
 			<td><button>U</button></td>
-			<td><button>D</button></td>
+			<td><button>X</button></td>
 		</tr>
 		<tr>
 			<td>30019307</td>
@@ -33,6 +32,6 @@
 			<td>Barboza</td>
 			<td>maria@example.com</td>
 			<td><button>U</button></td>
-			<td><button>D</button></td>
+			<td><button>X</button></td>
 		</tr>
 </table>

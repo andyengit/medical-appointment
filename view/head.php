@@ -5,42 +5,37 @@
 		<style rel="icon" type="img/png"> 
             <?php include_once($PATH."/view/img/estetos.png")?>
         </style>
+        <style rel="stylesheet" type="text/css">
+            <?php include_once($PATH."/view/css/normalize.css")?>
+        </style>
 		<style rel="stylesheet" type="text/css"> 
             <?php include_once($PATH."/view/css/styles.css")?>
-        </style>
-		<style rel="stylesheet" type="text/css">
-            <?php include_once($PATH."/view/css/normalize.css")?>
         </style>
 		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<script src="https://kit.fontawesome.com/28d6ce3668.js" crossorigin="anonymous"></script>
 	</head>
     <body>
         <header>
-            <main class="body">
-                <!--HEADER-->
-                <div class="header">
-                    <span><img src="http://localhost/proyecto/view/img/icon.png" alt="REVEMED"></span>
-                    <h1>REVEMED</h1>
+            <!--HEADER-->
+            <div class="header">
+                <div class="logo">
+                        <span><img src="http://localhost/proyecto/view/img/icon.png" alt="REVEMED"></span>
+                        <h1>REVEMED</h1>
                 </div>
-                <!--NOTICIAS-->
-                <section class="noticia">
-                    <div class="sombra"></div>
-                    <div class="contenedor">
-                        <img src="http://localhost/proyecto/view/img/noticia.jpg" />
-                        <div class="contenedor-text">
-                            <b>TU NUEVO PORTAL PARA AGENDAR CITAS MÉDICAS</b>
-                            <p>CON LOS DOCTORES Y CENTROS MÉDICOS DE TU PREFERENCIA</p>
-                        </div>
-                    </div>
-                </section>
-                <!--NAVEGACION-->
-                <section class="nav-menu">
-                    <div class="nav-sel"><a href="index.php"><span><img src="http://localhost/proyecto/view/img/casa.png"></span><b>INICIO</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=reservar"><span><img src="http://localhost/proyecto/view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="index.php?go=examenes"><span><img src="http://localhost/proyecto/view/img/jeringa.png"></span><b>RESERVAR EXÁMENES</b></a></div>
-                    <div class="nav-sel"><a href="view/modulos/resultados.php"><span><img src="http://localhost/proyecto/view/img/libro.png" ></span><b>CONSULTAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/view/img/doc.png"></span><b>CONÓCENOS</b></a></div>
-                </section>
-            </main>
+                <div class="divi">
+                    <ul>
+                        <li><a href="index.php">INICIO</a></li>
+                        <li><a href="index.php?go=reservar">RESERVAR</a></li>
+                        <li><a href="index.php?go=resultados">CONSULTAR</a></li>
+                        <li><a href="#">NOSOTROS</a></li>
+                    </ul>
+                </div>
+                <div class="cuenta">
+                        <a href="index.php?go=registro">ENTRAR / REGISTRARSE</a>
+                </div>
+            </div>
         </header>
+        
+
+
         

@@ -1,3 +1,4 @@
+</div></section>
 <footer>
 	<div class="footer-img">
 		<img src="view/img/estetos.png" alt="">
