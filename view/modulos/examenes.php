@@ -1,3 +1,5 @@
+<section class="body">
+            <div class="cont">
 <div>
 	<h2>Reserva tu examen medico</h2>
 </div>
