@@ -11,9 +11,9 @@
 
             <!--NAVEGACION-->
             <section class="nav-menu" >
-                <div class="nav-sel"><a href="index.php?go=reservar"><span><img src="http://localhost/proyecto/view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
-                <div class="nav-sel"><a href="index.php?go=examenes"><span><img src="http://localhost/proyecto/view/img/jeringa.png" alt=""></span><b>RESERVAR EXÁMENES</b></a></div>
-                <div class="nav-sel"><a href="index.php?go=resultados"><span><img src="http://localhost/proyecto/view/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
+                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/view/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
+                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/view/img/jeringa.png" alt=""></span><b>RESERVAR EXÁMENES</b></a></div>
+                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/view/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
                 <div class="nav-sel"><a href="index.php?go=nosotros"><span><img src="http://localhost/proyecto/view/img/doc.png" alt=""></span><b>NOSOTROS</b></a></div>
             </section>
             <section class="body">
@@ -41,4 +41,4 @@
                     </span>
                 </div>
             </div>
-        
+</section>

@@ -74,15 +74,13 @@ table tr{
 	color: #34495E;
 }
 .cuenta{
-	display: flex;
 	position:relative;
 	margin: auto;
 	margin-top: 10px;
+	margin-top: 1.5rem;
 }
 .cuenta a{
-	margin-top: 1rem;
 	color: #34495E;
-
 }
 /*---------------------------------------------------
 				MODULOS
@@ -93,7 +91,6 @@ table tr{
 	margin-bottom: 2rem;
 }
 .body>.cont{
-	justify-content: center;
 	margin: auto;
 }
 /*---------------------------------------------------
@@ -129,8 +126,8 @@ table tr{
 .noticia .contenedor img{
 	height: 18rem;
 	width: 100vw;
-	object-fit: cover;
 	opacity: 0.5;
+	object-fit: cover;
 }
 /*------- NAV-MENU -------------*/
 
@@ -198,113 +195,6 @@ hr{
 	box-shadow:1px 13px 37px #000;
 }
 
-/*---------------------------------------------------
-				registro.php
------------------------------------------------------*/
-.modulos h2 {
-	margin-top: 1rem;
-	text-align: center;
-}
-
-.modulos form p {
-	height:4rem;
-	text-align:center;
-	font-size:18px;
-	line-height: 4rem;
-	font-family: "Josefin sans";
-}
-
-.modulos a {
-	color:#fff;
-	text-decoration:none;
-}
-
-.modulos a:hover {
-	color:#fff;
-	text-decoration:underline;
-}
-
-#register-form {
-	width:60%;
-	background:#34495E;
-	padding: 1.9rem;
-	margin: auto;
-	margin-top:2rem;
-	margin-bottom: 6rem;
-	border-radius: 2rem;
-	color:#fff;
-	box-shadow:7px 13px 37px #000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#register-form .botons {
-	width:100%;
-	background:#1f53c5;
-	border:none;
-	padding:1rem;
-	color:rgba(255, 255, 255, 0.938);
-	margin:1.2rem 0;
-	font-size:16px;
-	border-radius: .5rem;
-	cursor: pointer;
-}
-
-#register-form .botons:hover {
-	background:#406bc7;
-	color:#fff;
-}
-
-
-/*---------------------------------------------------
-				CAMPOS
------------------------------------------------------*/
-.res-p{
-	padding-top: 12px;
-}
-.res-p:first-child{
-	padding-top: 9px;
-}
-.res-o{
-	margin-top: 5px;
-	margin-right: 5px;
-}
-
-.data {
-	font-family: "Josefin sans";
-	width:100%;
-	background:#fff;
-	padding:10px;
-	border-radius:4px;
-	margin-bottom:16px;
-	border:1px solid #1f53c5;
-	font-size:18px;
-}
-
-#register-form {
-	display: block;
-}
-
-#register-form input {
-	display: inline-block;
-}
-
-.alert_warning {
-	color: rgb(255, 136, 0);
-	display: inline-block;
-	width: 100%;
-	text-align: right;
-	margin: 1rem;
-	margin-top: .5rem;
-}
-
-.alert_success {
-	color: rgb(4, 175, 4);
-	display: block;
-	width: 100%;
-	text-align: center;
-}
 
 /*---------------------------------------------------
 				FOOTER
