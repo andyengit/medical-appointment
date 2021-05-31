@@ -27,24 +27,28 @@
                 <div class="field">
                     <label>Nombres</label>
                     <input type="text" placeholder="Nombres" id="name" name="name" 
-        value="<?= isset($_SESSION['name']) ? $_SESSION['name'] : '' ?>">
+                        value="<?= isset($_SESSION['name']) ? $_SESSION['name'] : '' ?>"
+                    >
                 </div>
                 <div class="field">
                     <label>Apellidos</label>
                     <input type="text" placeholder="Apellidos" id="lastname" name="lastname" 
-            value="<?= isset($_SESSION['lastName']) ? $_SESSION['lastName'] : '' ?>">
+                        value="<?= isset($_SESSION['lastName']) ? $_SESSION['lastName'] : '' ?>"
+                    >
                 </div>
                 <div class="field">
                     <label>Cedula de Identidad</label>
                     <input type="number" placeholder="Cedula de Identidad" id="CI" name="CI" 
-            value="<?= isset($_SESSION['ci']) ? $_SESSION['ci'] : '' ?>">
+                        value="<?= isset($_SESSION['ci']) ? $_SESSION['ci'] : '' ?>"
+                    >
                 </div>
             </div>
             <div class=" two fields">
                 <div class="field">
                     <label>Correo electronico</label>
                     <input type="email" placeholder="Correo electronico" id="email" name="email" 
-            value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>">
+                        value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
+                    >
                 </div>
                 <div class="field">
                     <label>Contraseña</label>
@@ -75,7 +79,7 @@
     </form>
             
     <br>
-    <p>¿Ya tengo una cuenta? <a href="index.php?go=login">Ingresar</a></p>
+    <p>¿Ya tienes una cuenta? <a href="index.php?go=login">Ingresar</a></p>
     
     </div>
 </section>
