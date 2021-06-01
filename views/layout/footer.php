@@ -1,7 +1,7 @@
 
 <footer>
 	<div class="footer-img">
-		<img src="views/img/estetos.png" alt="">
+		<img src="assets/img/estetos.png" alt="">
 	</div>
 	<div>
 		<ul class="footer-integrantes">
