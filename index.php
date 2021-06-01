@@ -1,6 +1,7 @@
 <?php
 
 require_once "autoload.php";
+require_once "views/layout/header.php";
 
 if(isset($_GET["controller"])) 
     $controllerName = $_GET["controller"]."Controller";
@@ -22,3 +23,4 @@ if(class_exists($controllerName)) {
     echo "La página que buscas no existe.";
 }
     
+require_once "views/layout/footer.php";
