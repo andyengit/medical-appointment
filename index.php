@@ -1,12 +1,24 @@
 <?php
-session_start();
-require_once "controllers/viewController.php";
-require_once "models/viewModel.php";
-require_once "VARS.php";
-require_once "view/head.php";
 
-$mvc = new viewController();
-$mvc->changeView();
+require_once "autoload.php";
 
-require_once "view/foot.php";
-?>
+if(isset($_GET["controller"])) 
+    $controllerName = $_GET["controller"]."Controller";
+else {
+    echo "La página que buscas no existe.";
+    exit();
+}
+
+if(class_exists($controllerName)) {
+    $controller = new $controllerName();
+
+    if(isset($_GET["action"]) && method_exists($controller, $_GET["action"])) {
+        $action = $_GET["action"];
+        $controller->$action();
+    }else {
+        echo "La página que buscas no existe.";
+    }
+}else {
+    echo "La página que buscas no existe.";
+}
+    
