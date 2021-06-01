@@ -1,7 +1,8 @@
 <?php
-class UserController {
-    static function renderRegisterForm() {
-        
+
+class userController {
+    public function index() {
+        echo "Controlador User Accion Index.";
     }
 }
 
