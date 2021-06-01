@@ -1,12 +1,7 @@
 
 <footer>
 	<div class="footer-img">
-		<img src="view/img/estetos.png" alt="">
-	</div>
-	<div>
-		<ul class="footer-accesos">
-			<li><a href="index.php">INICIO</a></li>
-		</ul>
+		<img src="views/img/estetos.png" alt="">
 	</div>
 	<div>
 		<ul class="footer-integrantes">
