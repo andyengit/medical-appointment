@@ -6,11 +6,11 @@ class userController {
     }
 
     public function login() {
-        require_once "../views/user/login.php";
+        require_once "views/user/login.php";
     }
 
     public function register() {
-        require_once "../views/user/register.php";
+        require_once "views/user/register.php";
     }
 }
 

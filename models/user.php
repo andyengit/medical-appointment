@@ -22,6 +22,8 @@
         }
     }
 
+    //Esta validación en este momento no funciona porque debo cambiarle ciertas cosas ahora
+    //que ya no es solo un archivo al que se llama con post sino un método dentro de una clase
     public static function validate() {
         session_start();
         $_SESSION['errors'] = false;

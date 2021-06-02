@@ -27,7 +27,9 @@
                     </ul>
                 </div>
                 <div class="cuenta">
-                        <a href="index.php?go=login">ENTRAR</a><b> / </b><a href="index.php?go=registro">REGISTRARSE</a>
+                        <a href="index.php?controller=user&&action=login">ENTRAR</a>
+                        <b> / </b>
+                        <a href="index.php?controller=user&&action=register">REGISTRARSE</a>
                 </div>
             </div>
         </header>
