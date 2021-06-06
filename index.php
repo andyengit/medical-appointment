@@ -10,3 +10,5 @@ $mvc->changeView();
 
 require_once "view/foot.php";
 ?>
+
+//ESTO ES UN COMENTARIO
