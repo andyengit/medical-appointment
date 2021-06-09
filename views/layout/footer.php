@@ -1,10 +1,10 @@
 
 <footer>
 	<div class="footer-img">
-		<img src="assets/img/estetos.png" alt="">
+		<img src="<?=base_url?>assets/img/estetos.png" alt="estetoscopio">
 	</div>
 	<div>
-		<ul class="footer-integrantes">
+		<ul>
 			<b>INTEGRANTES:</b>
 			<li><a href="https://aulabqto.iujoac.org.ve/user/view.php?id=2148&course=1180">Anderson Armeya</a></li>
 			<li><a href="https://aulabqto.iujoac.org.ve/user/view.php?id=2694&course=1180">Maria Vanessa Barboza</a></li>
