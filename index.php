@@ -3,6 +3,7 @@
 require_once "autoload.php";
 require_once "config/parameters.php";
 require_once "views/layout/header.php";
+
 if(isset($_GET["controller"])) 
     $controllerName = $_GET["controller"]."Controller";
 else {
@@ -32,6 +33,3 @@ if(class_exists($controllerName)) {
 }
     
 require_once "views/layout/footer.php";
-=======
-require_once "view/foot.php";
-?>
