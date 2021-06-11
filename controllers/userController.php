@@ -19,7 +19,15 @@ class userController {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url);
             
-        $user = new User();
+        $name = $_POST["name"];
+        $lastName = $_POST["lastName"];
+        $ci = $_POST["ci"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $date = $_POST["date"];
+        $phone = $_POST["phone"];
+
+        $user = new User($name, $lastName, $password, $email, $ci, $phone, $date);
 
         $user->validate($_POST);
 

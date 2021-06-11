@@ -43,18 +43,18 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
                     </div>
                     <div class="field">
                         <label>Apellidos</label>
-                        <input type="text" placeholder="Apellidos" id="lastname" name="lastname" 
+                        <input type="text" placeholder="Apellidos" id="lastName" name="lastName" 
                             value="<?= isset($_SESSION['lastName']) ? $_SESSION['lastName'] : '' ?>"
                         >
                     </div>
                     <div class="field">
                         <label>Cedula de Identidad</label>
-                        <input type="number" placeholder="Cedula de Identidad" id="CI" name="CI" 
+                        <input type="number" placeholder="Cedula de Identidad" id="ci" name="ci" 
                             value="<?= isset($_SESSION['ci']) ? $_SESSION['ci'] : '' ?>"
                         >
                     </div>
                 </div>
-                <div class=" two fields">
+                <div class="two fields">
                     <div class="field">
                         <label>Correo electronico</label>
                         <input type="email" placeholder="Correo electronico" id="email" name="email" 

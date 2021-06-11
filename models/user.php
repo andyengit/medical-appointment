@@ -9,18 +9,15 @@
         public $date;
         public $rol;
 
-        //$name, $lastName, $password, $email, $ci, $phone, $date
-
-        function __construct()
+        function __construct($name, $lastName, $password, $email, $ci, $phone, $date)
         {
-            //$this->name = $name;
-            //$this->lastName = $lastName;
-            //$this->password = $password;
-            //$this->email = $email;
-            //$this->ci = $ci;
-            //$this->phone = $phone;
-            //$this->date = $date;
-            //$this->rol = 0;
+            $this->name = $name;
+            $this->lastName = $lastName;
+            $this->ci = $ci;
+            $this->email = $email;
+            $this->password = $password;
+            $this->date = $date;
+            $this->phone = $phone;
         }
 
         public function validate(array $data) : bool {
@@ -39,7 +36,7 @@
                 $name = $this->testInput($data["name"]);
     
             if(empty($data["lastname"])) 
-                $_SESSION["errors"]["lastname"] = "Debe ingresar su apellido.";
+                $_SESSION["errors"]["lastName"] = "Debe ingresar su apellido.";
             else 
                 $lastName = $this->testInput($data["lastname"]);
     
@@ -47,16 +44,16 @@
                 $_SESSION["errors"]["name"] = "Introduzca solamente letras y espacios.";
             
             if (!preg_match("/^[a-zA-Z' ]*$/", $lastName))
-                $_SESSION["errors"]["lastname"] = "Introduzca solamente letras y espacios.";
+                $_SESSION["errors"]["lastName"] = "Introduzca solamente letras y espacios.";
     
             #Validation for CI
             if(empty($data["CI"])) 
-                $_SESSION["errors"]["CI"] = "Debe ingresar su número de cedula.";
+                $_SESSION["errors"]["ci"] = "Debe ingresar su número de cedula.";
             else
-                $ci = $this->testInput($data["CI"]);
+                $ci = $this->testInput($data["ci"]);
     
             if(!preg_match("/^[0-9]*$/", $ci) || strlen($ci) < 6 || strlen($ci) > 8) 
-                $_SESSION["errors"]["CI"] = "Debe ingresar un número de cedula válido.";
+                $_SESSION["errors"]["ci"] = "Debe ingresar un número de cedula válido.";
                 
             #Validation for email
             if(empty($data["email"])) 
@@ -65,7 +62,7 @@
                 $email = $this->testInput($data["email"]);
     
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $_SESSION["errors"]["email"] = "El texto introducido no es una dirección valida de email.";
+                $_SESSION["errors"]["email"] = "La dirección de email es inválida.";
             } 
                 
             #Validation for password
