@@ -7,7 +7,7 @@
         public $ci;
         public $phone;
         public $date;
-        public $rol;
+        public $role;
 
         function __construct($name, $lastName, $password, $email, $ci, $phone, $date)
         {
