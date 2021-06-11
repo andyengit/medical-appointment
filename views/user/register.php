@@ -66,17 +66,13 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
                         <input type="password" placeholder="Contraseña" id="password" name="password">
                 </div>
             </div>
-            <div class="three fields">
+            <div class="two fields">
                 <div class="field">
                     <label>Fecha de Nacimiento</label>
                     <input type="date" name="date" id="">
                 </div>
                 <div class="field">
-                    <label>Tlf Local</label>
-                    <input type="number" name="phone" id="phone">
-                </div>
-                <div class="field">
-                    <label>Tlf Movil</label>
+                    <label>Número de teléfono</label>
                     <input type="number" name="phone" id="phone">
                 </div>
             </div>
