@@ -69,7 +69,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
             <div class="two fields">
                 <div class="field">
                     <label>Fecha de Nacimiento</label>
-                    <input type="date" name="date" id="">
+                    <input type="date" name="birthDate" id="birthDate">
                 </div>
                 <div class="field">
                     <label>Número de teléfono</label>

@@ -6,17 +6,17 @@
         public $email;
         public $ci;
         public $phone;
-        public $date;
+        public $birthDate;
         public $role;
 
-        function __construct($name, $lastName, $password, $email, $ci, $phone, $date)
+        function __construct($name, $lastName, $password, $email, $ci, $phone, $birthDate)
         {
             $this->name = $name;
             $this->lastName = $lastName;
             $this->ci = $ci;
             $this->email = $email;
             $this->password = $password;
-            $this->date = $date;
+            $this->birthDate = $birthDate;
             $this->phone = $phone;
         }
 
