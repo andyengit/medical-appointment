@@ -18,18 +18,18 @@ class userController {
     public function validate() {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url);
-            
-        $name = $_POST["name"];
-        $lastName = $_POST["lastName"];
-        $ci = $_POST["ci"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $date = $_POST["date"];
-        $phone = $_POST["phone"];
 
-        $user = new User($name, $lastName, $password, $email, $ci, $phone, $date);
+        $user = new User();
 
-        $user->validate($_POST);
+        $user->setName($_POST["name"]);
+        $user->setLastName($_POST["lastName"]);
+        $user->setCi($_POST["ci"]);
+        $user->setEmail($_POST["email"]);
+        $user->setPassword($_POST["password"]);
+        $user->setBirthDate($_POST["birthDate"]);
+        $user->setPhone($_POST["phone"]);
+
+        $user->save();
 
         header("Location:".base_url."?controller=user&&action=register");
     }

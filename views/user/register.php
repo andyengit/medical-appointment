@@ -93,5 +93,7 @@ if(isset($_SESSION["register"]) && $_SESSION["register"]) {
 
 <?php 
 
-session_destroy();
-$_SESSION = null;
+if(isset($_SESSION)) {
+    session_destroy();
+    $_SESSION = null;
+}
