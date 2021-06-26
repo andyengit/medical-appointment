@@ -1,0 +1,257 @@
+/*------------------------------------------------/
+						COLORES
+--------------------------------------------------/
+#34495E AZUL PRINCIPAL
+--------------------------------------------------/
+						FUENTES
+--------------------------------------------------*/
+
+:root {
+    --main-color: #0079C8;
+}
+
+@font-face {
+    font-family: "Josefin Sans";
+    src: url(http://localhost/proyecto/assets/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
+}
+
+
+/*------------------------------------------------/
+						GENERAL
+--------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+b,
+p,
+h1,
+h2,
+h3,
+li {
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+}
+
+h4 {
+    font-family: "Josefin Sans";
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+table {
+    display: block;
+}
+
+table tr {
+    border-top: 1px solid;
+}
+
+
+/* --------------------------------------------------
+					topHeader
+-------------------------------------------------- */
+
+.topHeader {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4.5fr 1fr;
+    height: 5rem;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.topHeader .logo {
+    position: relative;
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.logo h1 {
+    display: flex;
+    color: var(--main-color);
+    font-family: "Josefin Sans";
+    margin-left: .5rem;
+}
+
+.divi {
+    margin-top: 1rem;
+}
+
+.divi ul {
+    display: flex;
+}
+
+.divi ul li {
+    padding: 1rem;
+    list-style: none;
+}
+
+.divi ul li a {
+    color: var(--main-color);
+}
+
+.cuenta {
+    position: relative;
+    margin: auto;
+    white-space: nowrap;
+}
+
+.error404 {
+    text-align: center;
+    margin: auto;
+}
+
+
+/*---------------------------------------------------
+				MODULOS
+-----------------------------------------------------*/
+
+.body {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 28vw;
+    margin: auto;
+}
+
+
+/*---------------------------------------------------
+				inicio.php
+-----------------------------------------------------*/
+
+
+/*------- NOTICIAS-------------*/
+
+.noticia .contenedor {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.noticia .contenedor-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 40%;
+    left: 2rem;
+    font-family: "Josefin sans";
+    color: var(--main-color);
+}
+
+.contenedor-text b {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.contenedor-text p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #21618C;
+}
+
+.noticia .contenedor img {
+    height: 16rem;
+    width: 100vw;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+
+/*------- NAV-MENU -------------*/
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    max-width: 80rem;
+    margin: auto;
+}
+
+.nav-sel {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    flex: 1 1 18rem;
+    height: 9rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+.nav-menu div a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nav-menu div:hover {
+    opacity: 0.8;
+}
+
+.nav-menu .nav-sel a {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: auto;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.nav-menu .nav-sel a p {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+hr {
+    color: black;
+    size: 3;
+    width: 100%;
+}
+
+
+/*---------------------------------------------------
+				FOOTER
+-----------------------------------------------------*/
+
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    height: 12rem;
+    background-color: var(--main-color);
+    padding-left: 4rem;
+}
+
+footer div {
+    flex: 1;
+}
+
+footer div ul {
+    list-style: none;
+    color: white;
+}
+
+footer div ul li a {
+    color: white;
+}
+
+footer div img {
+    width: 5.5rem;
+}
+
+.footer-accesos {
+    padding-bottom: 5rem;
+}
