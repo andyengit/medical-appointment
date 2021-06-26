@@ -3,6 +3,8 @@ const BASE_URL = "http://localhost/proyecto/";
 
 require_once ("config/database.php");
 
+date_default_timezone_set("America/caracas");
+
 $url = !empty($_GET['url']) ? $_GET['url'] : 'User/index';
 $arrUrl = explode("/", $url);
 $controller = $arrUrl[0];
@@ -22,3 +24,5 @@ if (!empty($arrUrl[2])) {
         $params = trim($params, ',');
     }
 }
+
+

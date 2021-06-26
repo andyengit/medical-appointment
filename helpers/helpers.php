@@ -11,7 +11,8 @@ function dep($data){
 }
 
 function strClean($strCadena){
-    $string = preg_match(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
+
+    $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
     $string = trim($string);
     $string = stripslashes($string);
     $string = str_ireplace("<script>","",$string);
@@ -26,5 +27,22 @@ function strClean($strCadena){
     $string = str_ireplace("OR '1' = '1","",$string);
     $string = str_ireplace("OR ´1´ = ´1","",$string);
     $string = str_ireplace("is NULL; --","",$string);
-    $string = str_ireplace("is NULL; --","",$string);
+    $string = str_ireplace("LIKE'","",$string);
+    $string = str_ireplace('LIKE"',"",$string);
+    $string = str_ireplace("LIKE´","",$string);
+    $string = str_ireplace("OR 'a' = 'a","",$string);
+    $string = str_ireplace('OR "a" = "a',"",$string);
+    $string = str_ireplace("OR ´a´ = 'a","",$string);
+    $string = str_ireplace("--","",$string);
+    $string = str_ireplace("^","",$string);
+    $string = str_ireplace("[","",$string);
+    $string = str_ireplace("]","",$string);
+    $string = str_ireplace("==","",$string);
+
+    return $string;
+}
+
+function formatMoney($cantidad){
+    $cantidad = number_format($cantidad,2,",",".");
+    return $cantidad;
 }

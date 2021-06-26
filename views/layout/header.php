@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>REVEMED</title>
+    <title>REVEMED - <?php $method ?></title>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/estetos.png" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/semantic.css">
