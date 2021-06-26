@@ -1,4 +1,4 @@
-<section class="body">
+<main class="mid">
     <div class="cont">
     <h4 class="ui dividing">Iniciar sesión</h4>
         <form class="ui form">
@@ -16,4 +16,3 @@
         <br>
         <p>¿No tienes una cuenta? <a href="index?go=registro">Registrate</a></p>
     </div>
-</section>

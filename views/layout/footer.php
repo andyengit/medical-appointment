@@ -1,4 +1,5 @@
-<footer style="justify-content:flex-end">
+</main>
+<footer>
 	<div class="footer-img">
 		<img src="<?= base_url() ?>assets/img/estetos.png" alt="estetoscopio">
 	</div>
@@ -12,6 +13,7 @@
 		</ul>
 	</div>
 </footer>
+
 </body>
 
 </html>

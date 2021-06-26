@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>REVEMED - <?php $method ?></title>
+    <title>REVEMED</title>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/estetos.png" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/semantic.css">
@@ -12,15 +12,15 @@
     <script src="assets/javascript/semantic.js"></script>
 </head>
 
-<body style="display: flex; flex-direction:column;flex-wrap: wrap">
+<body>
     <!--HEADER-->
-    <header style="justify-content:flex-start;" class="topHeader">
+    <header class="topHeader">
         <div class="logo">
             <h1>REVEMED</h1>
         </div>
         <div class="divi">
             <ul>
-                <li><a href="<?= base_url()?>">INICIO</a></li>
+                <li><a href="<?= base_url() ?>">INICIO</a></li>
             </ul>
         </div>
         <div class="cuenta">

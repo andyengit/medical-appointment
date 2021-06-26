@@ -9,36 +9,11 @@
                 </div>
             </section>
 
+            <main>
             <!--NAVEGACION-->
-            <section class="nav-menu" >
-                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/assets/img/Calendario.png"></span><b>RESERVAR CITA</b></a></div>
-                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/assets/img/jeringa.png" alt=""></span><b>RESERVAR EXÁMENES</b></a></div>
-                <div class="nav-sel"><a href="#"><span><img src="http://localhost/proyecto/assets/img/libro.png" alt=""></span><b>CONSULTAR CITA</b></a></div>
-                <div class="nav-sel"><a href="index.php?go=nosotros"><span><img src="http://localhost/proyecto/assets/img/doc.png" alt=""></span><b>NOSOTROS</b></a></div>
+            <section class="nav-menu">
+                <div class="nav-sel"><a href="#"><span><i class="ui icon huge calendar outline"></i></span><b>RESERVAR CITA</b></a></div>
+                <div class="nav-sel"><a href="#"><span><i class="ui icon huge syringe"></i></span><b>RESERVAR EXÁMENES</b></a></div>
+                <div class="nav-sel"><a href="#"><span><i class="ui icon huge book"></i></span><b>CONSULTAR CITA</b></a></div>
+                <div class="nav-sel"><a href="#"><span><i class="ui icon huge hospital"></i></span><b>NOSOTROS</b></a></div>
             </section>
-            <section class="body">
-            <div class="cont">
-                <div class="info-flex">
-                <div class="info">
-                    <span>
-                        <img src="" alt="">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, dolor!</p>
-                        <a href=""><b>Lorem</b></a>
-                    </span>
-                </div>
-                <div class="info">
-                    <span>
-                        <img src="" alt="">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, dolor!</p>
-                        <a href=""><b>Lorem</b></a>
-                    </span>
-                </div>
-                <div class="info">
-                    <span>
-                        <img src="" alt="">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, dolor!</p>
-                        <a href=""><b>Lorem</b></a>
-                    </span>
-                </div>
-            </div>
-</section>
