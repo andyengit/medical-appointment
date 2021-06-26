@@ -5,6 +5,7 @@ class UserModel
     private $name;
     private $lastName;
     private $password;
+    private $passwordL;
     private $email;
     private $ci;
     private $phone;
@@ -30,6 +31,10 @@ class UserModel
     {
         $this->password = password_hash($this->testInput($password), PASSWORD_BCRYPT, ['cost' => 4]);
     }
+    function setPasswordL(string $password)
+    {
+        $this->passwordL = $password;
+    }
 
     function setEmail(string $email)
     {
@@ -51,9 +56,23 @@ class UserModel
         $this->birthDate = $this->testInput($birthDate);
     }
 
+    public function search(){
+        if($this->validateL()){
+            $query = "SELECT CI,PASSWORD FROM USERS WHERE CI = ('{$this->ci}')";
+            $result = $this->db->query($query);
+            $rows = $result->fetch_array();
+            var_dump($rows);
+            if(sizeof($rows) != 0 ){
+                if($this->ci == $rows[0] && password_verify($this->passwordL,$rows[1])){
+                    $_SESSION['messComp'] = "Logeo Completado";
+                } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
+            }else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
+        }
+    }
+
     public function save()
     {
-        if ($this->validate()) {
+        if ($this->validateR() && $this->verify()) {
             $query = "INSERT INTO users VALUES("
                 . "NULL, "
                 . "'{$this->name}', "
@@ -63,22 +82,57 @@ class UserModel
                 . "'{$this->ci}', "
                 . "'{$this->phone}', "
                 . "'{$this->birthDate}', "
-                . "'user')";
+                . "'patient')";
             $save = $this->db->query($query);
+            if ($save){
+                $_SESSION['messComp'] = "REGISTRO COMPLETO";
+                $result = true;
+            } else $result = false;
         } else header("Location:" . base_url() . "user/register");
-
-        $result = false;
-        if ($save)
-            $result = true;
-
         return $result;
     }
 
-    private function validate(): bool
+    public function verify(): bool {
+        $query = "SELECT CI FROM USERS WHERE CI = ('{$this->ci}')";
+        $result = $this->db->query($query);
+        $rows = $result->fetch_all();
+        if(sizeof($rows) != 0 ){
+            $_SESSION["errors"]["name"] = "Usuario ya ha sido registrado";
+            return false;
+            
+        }else return true;
+    }
+
+    private function validateL(): bool{
+        session_start();
+        $_SESSION["errors"] = [];
+
+        #Validation for CI
+        if (empty($this->ci))
+            $_SESSION["errors"]["ci"] = "Debe ingresar su número de cedula.";
+
+        if (!preg_match("/^[0-9]*$/", $this->ci) || strlen($this->ci) < 6 || strlen($this->ci) > 8)
+            $_SESSION["errors"]["ci"] = "Debe ingresar un número de cedula válido.";
+
+        #Validation for password
+        if (empty($this->passwordL))
+            $_SESSION["errors"]["password"] = "Debe ingresar una contraseña.";
+
+        if (strlen($this->passwordL) < 6)
+            $_SESSION["errors"]["password"] = "La contraseña debe contener al menos 6 caracteres.";
+
+        #Setting session variables for the input values
+        $_SESSION["ci"] = $this->ci;
+
+        if (!empty($_SESSION['errors'])){
+            return false;
+        } else return true;
+    }
+
+    private function validateR(): bool
     {
         session_start();
         $_SESSION["errors"] = [];
-        $nameErr = $lastNameErr = $ciErr = $emailErr = $passwordErr = "";
 
         #Validation for name and last name
         if (empty($this->name))
@@ -121,12 +175,9 @@ class UserModel
         $_SESSION["ci"] = $this->ci;
         $_SESSION["email"] = $this->email;
 
-        $_SESSION["register"] = empty($_SESSION["errors"]);
-
-        if (!$_SESSION["register"])
+        if (!empty($_SESSION['errors'])){
             return false;
-
-        return true;
+        }return true;
     }
 
     private function testInput(string $data): string
@@ -139,3 +190,5 @@ class UserModel
         return $data;
     }
 }
+
+

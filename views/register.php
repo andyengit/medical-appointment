@@ -25,13 +25,13 @@ if (isset($_SESSION["register"]) && $_SESSION["register"]) {
             <br>
         <?php endif ?>
 
-        <?php if (isset($register) && $register) : ?>
+        <?php if (isset($_SESSION['messComp'])) : ?>
             <div class="ui attached success message">
-                <p>Registro de usuario completado.</p>
+                <p><?=$_SESSION['messComp']?></p>
             </div>
         <?php endif ?>
 
-        <form class="ui form" method="POST" action="<?= base_url() ?>user/validate" id="register-form">
+        <form class="ui form" method="POST" action="<?= base_url() ?>user/validateRegister" id="register-form">
 
             <div class="fields">
                 <div class="field">
@@ -77,7 +77,7 @@ if (isset($_SESSION["register"]) && $_SESSION["register"]) {
         </form>
 
         <br>
-        <p>¿Ya tienes una cuenta? <a href="index.php?controller=user&action=login">Ingresar</a></p>
+        <p>¿Ya tienes una cuenta? <a href="<?=base_url()?>user/login">Ingresar</a></p>
 
     </div>
 

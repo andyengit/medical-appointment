@@ -10,7 +10,7 @@ class Views
             $view = 'views/'. $controller . '/' . $view . '.php';
         }
         require_once ("views/layout/header.php");
-        require_once($view);
+        require_once ($view);
         require_once ("views/layout/footer.php");
     }
 }

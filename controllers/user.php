@@ -17,7 +17,7 @@ class User extends Controllers
         $this->views->getView($this, "register");
 
     }
-    public function validate() {
+    public function validateRegister() {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url());
 
@@ -32,7 +32,20 @@ class User extends Controllers
         $user->setPhone($_POST["phone"]);
 
         $user->save();
-
         header("Location:".base_url()."user/register");
+    }
+
+    public function validateLogin() {
+        if($_SERVER["REQUEST_METHOD"] != "POST")
+            header("Location:".base_url());
+
+        $user = new UserModel();
+
+        $user->setCi($_POST['ci']);
+        $user->setPasswordL($_POST['password']);
+
+        $user->search();
+        header("Location:".base_url()."user/login");
+
     }
 }

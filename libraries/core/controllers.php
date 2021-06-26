@@ -16,4 +16,9 @@ class Controllers
             $this->model = new $model();
         }
     }
+    public function session($rol){
+        if(!isset($_SESSION[$rol]) || $rol != $_SESSION['rol']){
+            header("Location: ".base_url());
+        }
+    }
 }
