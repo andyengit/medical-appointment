@@ -1,7 +1,6 @@
-
-<footer>
+<footer style="justify-content:flex-end">
 	<div class="footer-img">
-		<img src="<?=base_url?>assets/img/estetos.png" alt="estetoscopio">
+		<img src="<?= base_url ?>assets/img/estetos.png" alt="estetoscopio">
 	</div>
 	<div>
 		<ul>

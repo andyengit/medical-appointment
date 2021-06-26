@@ -5,268 +5,253 @@
 --------------------------------------------------/
 						FUENTES
 --------------------------------------------------*/
-@font-face{
-	font-family: "Josefin Sans";
-	src: url(http://localhost/proyecto/assets/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
+
+:root {
+    --main-color: #0079C8;
 }
+
+@font-face {
+    font-family: "Josefin Sans";
+    src: url(http://localhost/proyecto/assets/css/JosefinSans-VariableFont_wght.ttf) format('truetype');
+}
+
+
 /*------------------------------------------------/
 						GENERAL
 --------------------------------------------------*/
+
 * {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a,b,p,h1,h2,h3,li{
-	font-family: "Josefin Sans",sans-serif;
-	text-decoration: none;
+a,
+b,
+p,
+h1,
+h2,
+h3,
+li {
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
 }
 
 h4 {
-	font-family: "Josefin Sans";
-	margin-top:50px;
-	font-size:20px;
-	text-align:center;
+    font-family: "Josefin Sans";
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
 }
+
 table {
-	display: block;
+    display: block;
 }
-table tr{
-	border-top: 1px solid;
+
+table tr {
+    border-top: 1px solid;
 }
+
+
 /* --------------------------------------------------
-					HEADER
+					topHeader
 -------------------------------------------------- */
 
-.header{
-	position: relative;
-	display: grid;
-	grid-template-columns: 1.5fr 4fr 1fr;
-	padding-top: .5rem;
-	width: 100vw;
-	overflow: hidden;
+.topHeader {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4.5fr 1fr;
+    height: 5rem;
+    width: 100vw;
+    overflow: hidden;
 }
 
-.header .logo{
-	position: relative;
-	display: flex;
-	margin-left: 2rem;
+.topHeader .logo {
+    position: relative;
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
 }
 
-.logo h1{
-	display: flex;
-	color: #34495E;
-	font-family: "Josefin Sans";
-	margin-left: .5rem;
+.logo h1 {
+    display: flex;
+    color: var(--main-color);
+    font-family: "Josefin Sans";
+    margin-left: .5rem;
 }
+
 .divi {
-	margin-top: 10px;
+    margin-top: 1rem;
 }
-.divi ul{
-	display: flex;
+
+.divi ul {
+    display: flex;
 }
-.divi ul li{
-	padding: 1rem;
-	list-style: none;
+
+.divi ul li {
+    padding: 1rem;
+    list-style: none;
 }
-.divi ul li a{
-	color: #34495E;
+
+.divi ul li a {
+    color: var(--main-color);
 }
-.cuenta{
-	position:relative;
-	margin: auto;
-	margin-top: 10px;
-	margin-top: 1.5rem;
+
+.cuenta {
+    position: relative;
+    margin: auto;
+    white-space: nowrap;
 }
-.cuenta a{
-	color: #34495E;
+
+.error404 {
+    text-align: center;
+    margin: auto;
 }
+
+
 /*---------------------------------------------------
 				MODULOS
 -----------------------------------------------------*/
+
 .body {
-	display: flex;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 28vw;
+    margin: auto;
 }
-.body>.cont{
-	margin: auto;
-}
+
+
 /*---------------------------------------------------
 				inicio.php
 -----------------------------------------------------*/
+
+
 /*------- NOTICIAS-------------*/
-.noticia .contenedor{
+
+.noticia .contenedor {
     position: relative;
-    text-align: center;
-	width: 100vw;
-	overflow: hidden;
+    width: 100vw;
+    overflow: hidden;
 }
 
-.noticia .contenedor-text{
+.noticia .contenedor-text {
     position: absolute;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-    top: 60%;
-	left: 50vw;
-    transform: translate(-50%, -50%);
-	font-family: "Josefin sans";
-	color: #34495E;
-	
+    display: flex;
+    flex-direction: column;
+    top: 40%;
+    left: 2rem;
+    font-family: "Josefin sans";
+    color: var(--main-color);
 }
-.contenedor-text b{
-	font-size: 2rem;
+
+.contenedor-text b {
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
-.contenedor-text p{
-	margin-top: 1rem;
-	font-size: 1rem;
+
+.contenedor-text p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #21618C;
 }
-.noticia .contenedor img{
-	height: 18rem;
-	width: 100vw;
-	opacity: 0.5;
-	object-fit: cover;
+
+.noticia .contenedor img {
+    height: 16rem;
+    width: 100vw;
+    opacity: 0.5;
+    object-fit: cover;
 }
+
+
 /*------- NAV-MENU -------------*/
 
-.nav-menu{
-	display: flex;
-	flex-wrap: wrap;
-	border-radius: 1rem;
-	max-width: 80rem;
-	margin: auto;
-}
-.nav-sel{
-	display: flex;
-	flex-direction: column;
-	background-color: #34495E;
-	flex: 1 1 8rem;
-	height: 8rem;
-	margin: 1rem;
-	padding: 1rem;
-	border-radius: 0.4rem;
-}
-.nav-menu div a{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-}
-.nav-menu div:hover{
-	opacity: 0.8;
-}
-.nav-menu .nav-sel a{
-	display: flex;
-	align-items: center;
-	justify-self: center;
-	margin: auto;
-	text-decoration: none;
-	list-style: none;
-	color: white;
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    max-width: 80rem;
+    margin: auto;
 }
 
-.nav-menu .nav-sel a b{
-	padding-top: 0.5rem;
-	text-align: center;
+.nav-sel {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    flex: 1 1 18rem;
+    height: 9rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.4rem;
 }
-hr{
-	color:black;
-	size: 3;
-	width: 100%;
+
+.nav-menu div a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-/*INFORMACIONES*/
-.info-flex {
-	display: flex;
-	flex-wrap: wrap;
-	border-radius: 1rem;
-	max-width: 80rem;
-	margin: auto;
+
+.nav-menu div:hover {
+    opacity: 0.8;
 }
-.info-flex .info{
-	display: flex;
-	flex-direction: column;
-	background-color: white;
-	flex: 1 1 8rem;
-	height: 8rem;
-	margin: 1rem;
-	padding: 1rem;
-	border-radius: 0.4rem;
-	box-shadow:1px 13px 37px #000;
+
+.nav-menu .nav-sel a {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: auto;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.nav-menu .nav-sel a p {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+hr {
+    color: black;
+    size: 3;
+    width: 100%;
 }
 
 
 /*---------------------------------------------------
 				FOOTER
 -----------------------------------------------------*/
-footer{
-	position: relative;
-	width: 100%;
-	bottom: 0;
-	display: flex;
-	justify-content: space-between;
-	margin: auto;
-	align-items: center;
-	height: 12rem;
-	background-color: #34495E;
-	padding-left: 4rem;
+
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    height: 12rem;
+    background-color: var(--main-color);
+    padding-left: 4rem;
 }
-footer div{
-	flex: 1;
+
+footer div {
+    flex: 1;
 }
-footer div ul{
-	list-style: none;
-	color: white;
+
+footer div ul {
+    list-style: none;
+    color: white;
 }
-footer div ul li a{
-	color: white;
+
+footer div ul li a {
+    color: white;
 }
-footer div img{
-	width: 5.5rem;	
+
+footer div img {
+    width: 5.5rem;
 }
+
 .footer-accesos {
-	padding-bottom: 5rem;
-}
-
-/*---------------------------------------------------
-				resultados.php
------------------------------------------------------*/
-.tab-crud{
-	margin-top: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
-.tab-crud th{
-	flex: 1;
-	padding-left: 3rem;
-	padding-right: 3rem;
-	padding-top: .5rem;
-	padding-bottom: 0.5rem;
-	background-color: #34495E;
-	color: white;
-}
-.tab-crud td{
-	flex: 1;
-	padding-left: 3rem;
-	padding-right: 3rem;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.tab-crud tr:hover{
-	background-color: #406bc7;
-
-}
-.tab-crud td button{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: auto;
-	padding: 0.3rem;
-	background-color: white;
-	border-radius: .4rem;
-	padding-right: 1rem;
-	padding-left: 1rem;
+    padding-bottom: 5rem;
 }
