@@ -1,8 +1,6 @@
-<?php session_start();?>
 <main class="mid">
-
     <div class="cont">
-        
+
         <h4 class="ui dividing">Iniciar sesión</h4>
         <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) : ?>
             <div class='ui attached negative message'>
@@ -36,7 +34,3 @@
         <p>¿No tienes una cuenta? <a href="<?= base_url() ?>user/register">Registrate</a></p>
     </div>
     <?php
-    if (isset($_SESSION)) {
-        session_destroy();
-        $_SESSION = null;
-    }

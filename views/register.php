@@ -1,12 +1,4 @@
 <?php
-
-session_start();
-
-if (isset($_SESSION["register"]) && $_SESSION["register"]) {
-    $register = true;
-    session_destroy();
-    $_SESSION = null;
-}
 ?>
 <main class="mid">
 
@@ -82,8 +74,3 @@ if (isset($_SESSION["register"]) && $_SESSION["register"]) {
     </div>
 
     <?php
-
-    if (isset($_SESSION)) {
-        session_destroy();
-        $_SESSION = null;
-    }

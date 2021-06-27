@@ -20,11 +20,25 @@
         </div>
         <div class="divi">
             <ul>
-                <li><a href="<?= base_url() ?>">INICIO</a></li>
+                <li><a href="<?php echo  base_url(). ($_SESSION['globalRol'] == 'User' ? "" : $_SESSION['globalRol']."/inicio") ?>">INICIO</a></li>
             </ul>
         </div>
         <div class="cuenta">
-            <a href="<?= base_url() ?>user/login"><button class="ui tiny primary button">ENTRAR</button></a>
-            <a href="<?= base_url() ?>user/register"><button class="ui inverted tiny primary button">REGISTRARSE</button></a>
+            <?php
+                if($_SESSION['logIn'] == false){?>
+                    <a href="<?= base_url() ?>user/login"><button class="ui tiny primary button">ENTRAR</button></a>
+                    <a href="<?= base_url() ?>user/register"><button class="ui inverted tiny primary button">REGISTRARSE</button></a>
+            <?php 
+                }else {?>
+                <i class="ui user icon"></i>
+                <span><?=$_SESSION['ci']?></span>
+                <p>(<a href="<?=base_url().$_SESSION['globalRol']?>/LogOut">LogOut</a>)</p>
+                <?php
+             }
+             ?>
+
+            
+            
+            
         </div>
     </header>

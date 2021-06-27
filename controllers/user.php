@@ -1,19 +1,31 @@
 <?php
 class User extends Controllers
-{
+{   
+
     public function __construct(){
         parent::__construct();
+
     }
 
     public function index(){
+        If($_SESSION['globalRol'] != 'User'){
+                header("Location:".base_url().$_SESSION['globalRol']."/inicio");
+            }
         $this->views->getView($this, "inicio");
+        
     }
 
     public function login(){
+        If($_SESSION['globalRol'] != 'User'){
+            header("Location:".base_url().$_SESSION['globalRol']."/inicio");
+        }
         $this->views->getView($this, "login");
 
     }
     public function register(){
+        If($_SESSION['globalRol'] != 'User'){
+            header("Location:".base_url().$_SESSION['globalRol']."/inicio");
+        }
         $this->views->getView($this, "register");
 
     }
@@ -31,8 +43,8 @@ class User extends Controllers
         $user->setBirthDate($_POST["birthDate"]);
         $user->setPhone($_POST["phone"]);
 
-        $user->save();
-        header("Location:".base_url()."user/register");
+        $header = $user->save();
+        header($header);
     }
 
     public function validateLogin() {
@@ -44,8 +56,8 @@ class User extends Controllers
         $user->setCi($_POST['ci']);
         $user->setPasswordL($_POST['password']);
 
-        $user->search();
-        header("Location:".base_url()."user/login");
+        $header = $user->search();
+        header($header);
 
     }
 }

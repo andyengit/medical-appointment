@@ -56,22 +56,30 @@ class UserModel
         $this->birthDate = $this->testInput($birthDate);
     }
 
-    public function search(){
+    public function search() {
+        $reditect = "Location:".base_url()."user/login";
         if($this->validateL()){
-            $query = "SELECT CI,PASSWORD FROM USERS WHERE CI = ('{$this->ci}')";
+            $query = "SELECT CI,PASSWORD,ROLE FROM USERS WHERE CI = ('{$this->ci}')";
             $result = $this->db->query($query);
             $rows = $result->fetch_array();
             var_dump($rows);
             if(sizeof($rows) != 0 ){
                 if($this->ci == $rows[0] && password_verify($this->passwordL,$rows[1])){
+                    $_SESSION['globalRol'] = $rows[2];
+                    $_SESSION['globalCI'] = $this->ci;
+                    $_SESSION['logIn'] = true;
                     $_SESSION['messComp'] = "Logeo Completado";
+                    $reditect = "Location:".base_url()."patient/inicio";
                 } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
             }else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
-        }
+        } 
+        echo $reditect;
+        return $reditect;
     }
 
     public function save()
     {
+        $redirect = "Location:" . base_url() . "user/register";
         if ($this->validateR() && $this->verify()) {
             $query = "INSERT INTO users VALUES("
                 . "NULL, "
@@ -86,10 +94,14 @@ class UserModel
             $save = $this->db->query($query);
             if ($save){
                 $_SESSION['messComp'] = "REGISTRO COMPLETO";
-                $result = true;
-            } else $result = false;
-        } else header("Location:" . base_url() . "user/register");
-        return $result;
+                $_SESSION['globalRol'] = 'patient';
+                $_SESSION['globalCI'] = $this->ci;
+                $_SESSION['logIn'] = true;
+                $_SESSION['messComp'] = "Logeo Completado";
+                $redirect = "Location:".base_url()."patient/inicio";
+            } 
+        }
+        return $redirect;
     }
 
     public function verify(): bool {
@@ -104,7 +116,6 @@ class UserModel
     }
 
     private function validateL(): bool{
-        session_start();
         $_SESSION["errors"] = [];
 
         #Validation for CI
@@ -131,7 +142,6 @@ class UserModel
 
     private function validateR(): bool
     {
-        session_start();
         $_SESSION["errors"] = [];
 
         #Validation for name and last name

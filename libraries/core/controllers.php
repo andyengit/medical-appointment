@@ -1,10 +1,13 @@
 <?php
 class Controllers
 {
+    private $role;
+
     public function __construct()
     {
         $this->views = new Views();
         $this->loadModel();
+        
     }
 
     public function loadModel()
@@ -14,11 +17,6 @@ class Controllers
         if (file_exists($routClass)) {
             require_once($routClass);
             $this->model = new $model();
-        }
-    }
-    public function session($rol){
-        if(!isset($_SESSION[$rol]) || $rol != $_SESSION['rol']){
-            header("Location: ".base_url());
         }
     }
 }
