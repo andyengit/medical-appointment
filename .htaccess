@@ -1,8 +1,6 @@
-<IfModule mod_rewrite.c>
+Options all -Indexes
 RewriteEngine on
 
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
-
-RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
-</IfModule>
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
