@@ -24,5 +24,3 @@ if (!empty($arrUrl[2])) {
         $params = trim($params, ',');
     }
 }
-
-
