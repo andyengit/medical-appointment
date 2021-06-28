@@ -9,12 +9,14 @@ class Patient extends Controllers
     }
 
     public function inicio(){
-        $this->views->getView($this, "inicio");
+        $this->views->getView($this,$this->role, "inicio");
         
     }
     public function stepOne(){
-        $this->views->getView($this, "stepOne");
-        
+        $this->views->getView($this,$this->role, "reservarStepOne");
+    }
+    public function stepTwo(){
+        $this->views->getView($this,$this->role, "reservarStepTwo");
     }
 
     public function LogOut(){

@@ -1,5 +1,4 @@
-
-<section class="body">
+<main class="mid">
     <div class="cont">
         <div>
             <h2>Reserva tu cita médica</h2>
@@ -111,4 +110,3 @@
             </table>
         </div>
     </div>
-</section>

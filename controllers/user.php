@@ -3,30 +3,22 @@ class User extends Controllers
 {   
 
     public function __construct(){
+        $this->role = 'User';
         parent::__construct();
 
     }
 
     public function index(){
-        If($_SESSION['globalRol'] != 'User'){
-                header("Location:".base_url().$_SESSION['globalRol']."/inicio");
-            }
-        $this->views->getView($this, "inicio");
+        $this->views->getView($this,$this->role, "inicio");
         
     }
 
     public function login(){
-        If($_SESSION['globalRol'] != 'User'){
-            header("Location:".base_url().$_SESSION['globalRol']."/inicio");
-        }
-        $this->views->getView($this, "login");
+        $this->views->getView($this,$this->role, "login");
 
     }
     public function register(){
-        If($_SESSION['globalRol'] != 'User'){
-            header("Location:".base_url().$_SESSION['globalRol']."/inicio");
-        }
-        $this->views->getView($this, "register");
+        $this->views->getView($this,$this->role, "register");
 
     }
     public function validateRegister() {
