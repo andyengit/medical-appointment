@@ -3,13 +3,15 @@
 function base_url(){
     return BASE_URL;
 }
+
+//HACER VARDUMP DE VARIABLES
 function dep($data){
     $format = print_r("<pre>");
     $format .= print_r($data);
     $format .= print_r("</pre>");
     return $format;
 }
-
+//LIMPIAR CADENAS
 function strClean($strCadena){
 
     $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
@@ -41,7 +43,7 @@ function strClean($strCadena){
 
     return $string;
 }
-
+// DAR FORMATO DE DINERO EN 2000.00 a 2.000,00
 function formatMoney($cantidad){
     $cantidad = number_format($cantidad,2,",",".");
     return $cantidad;

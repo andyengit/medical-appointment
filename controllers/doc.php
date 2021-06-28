@@ -1,9 +1,9 @@
 <?php
-class Patient extends Controllers
+class Doc extends Controllers
 {
     function __construct()
     {
-        $this->role = 'patient';
+        $this->role = 'doc';
         parent::__construct();
 
     }
@@ -12,21 +12,14 @@ class Patient extends Controllers
         $this->views->getView($this,$this->role, "inicio");
         
     }
-    public function stepOne(){
-        $this->views->getView($this,$this->role, "reservarStepOne");
-    }
-    public function stepTwo(){
-        $this->views->getView($this,$this->role, "reservarStepTwo");
-        
-    }
+    public function citas(){
+        $this->views->getView($this,$this->role, "citas");
 
+    }
+    
     public function LogOut(){
         session_destroy();
         $_SESSION = NULL;
         header("Location: ".base_url());
     }
-
-
-
-
 }

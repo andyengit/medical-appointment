@@ -1,4 +1,5 @@
 <?php
+//CONEXION CON BASE DE DATOS
 class Database {
     public static function connect() {
         $db = new mysqli("localhost", "root", "", "revemed");

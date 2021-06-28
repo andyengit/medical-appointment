@@ -1,6 +1,7 @@
 <?php
 class Views
 {
+    //VALIDACION  DE ENTRADAS DE PANTALLAS
     function getView($controller,$role, $view)
     {
         If($_SESSION['globalRol'] != $role){

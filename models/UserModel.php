@@ -17,6 +17,8 @@ class UserModel
         $this->db = Database::connect();
     }
 
+    //SETTERS
+
     function setName(string $name)
     {
         $this->name = $this->testInput($name);
@@ -56,23 +58,37 @@ class UserModel
         $this->birthDate = $this->testInput($birthDate);
     }
 
-    public function search() {
-        $reditect = "Location:".base_url()."user/login";
-        if($this->validateL()){
-            $query = "SELECT CI,PASSWORD,ROLE FROM USERS WHERE CI = ('{$this->ci}')";
+    //FUNCTIONS
+
+    public function search()
+    {
+        $reditect = "Location:" . base_url() . "user/login";
+        if ($this->validateL()) {
+            $query = "SELECT CI,PASSWORD,ROLE,NAME,LASTNAME FROM USERS WHERE CI = ('{$this->ci}')";
             $result = $this->db->query($query);
-            $rows = $result->fetch_array();
+            $rows = $result->fetch_assoc();
             var_dump($rows);
-            if(sizeof($rows) != 0 ){
-                if($this->ci == $rows[0] && password_verify($this->passwordL,$rows[1])){
-                    $_SESSION['globalRol'] = $rows[2];
-                    $_SESSION['globalCI'] = $this->ci;
-                    $_SESSION['logIn'] = true;
-                    $_SESSION['messComp'] = "Logeo Completado";
-                    $reditect = "Location:".base_url()."patient/inicio";
+            if (sizeof($rows) != 0) {
+                if ($this->ci == $rows['CI'] && password_verify($this->passwordL, $rows['PASSWORD'])) {
+                    if ($rows['ROLE'] == 'doc') {
+                        $_SESSION['name'] = $rows['NAME'];
+                        $_SESSION['lastname'] = $rows['LASTNAME'];
+                        $_SESSION['globalRol'] = $rows['ROLE'];
+                        $_SESSION['globalCI'] = $this->ci;
+                        $_SESSION['logIn'] = true;
+                        $reditect = "Location:" . base_url()."doc/inicio";
+                    }
+                    if ($rows['ROLE'] == 'patient') {
+                        $_SESSION['name'] = $rows['NAME'];
+                        $_SESSION['lastname'] = $rows['LASTNAME'];
+                        $_SESSION['globalRol'] = $rows['ROLE'];
+                        $_SESSION['globalCI'] = $this->ci;
+                        $_SESSION['logIn'] = true;
+                        $reditect = "Location:" . base_url() ."patient/inicio";
+                    }
                 } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
-            }else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
-        } 
+            } else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
+        }
         echo $reditect;
         return $reditect;
     }
@@ -92,29 +108,31 @@ class UserModel
                 . "'{$this->birthDate}', "
                 . "'patient')";
             $save = $this->db->query($query);
-            if ($save){
+            if ($save) {
                 $_SESSION['messComp'] = "REGISTRO COMPLETO";
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;
                 $_SESSION['logIn'] = true;
-                $redirect = "Location:".base_url()."patient/inicio";
-            } 
+                $redirect = "Location:" . base_url() . "patient/inicio";
+            }
         }
         return $redirect;
     }
 
-    public function verify(): bool {
+    public function verify(): bool
+    {
         $query = "SELECT CI,EMAIL FROM USERS WHERE CI = ('{$this->ci}') OR EMAIL = ('{$this->email}')";
         $result = $this->db->query($query);
         $rows = $result->fetch_assoc();
-        if(sizeof($rows) != 0 ){
-            if($rows['EMAIL'] == $this->email) $_SESSION["errors"]["email"] = "Correo ya ha sido registrado";
-            if($rows['CI'] == $this->ci) $_SESSION["errors"]["email"] = "Usuario ya ha sido registrado";
+        if (sizeof($rows) != 0) {
+            if ($rows['EMAIL'] == $this->email) $_SESSION["errors"]["email"] = "Correo ya ha sido registrado";
+            if ($rows['CI'] == $this->ci) $_SESSION["errors"]["email"] = "Usuario ya ha sido registrado";
             return false;
-        }else return true;
+        } else return true;
     }
 
-    private function validateL(): bool{
+    private function validateL(): bool
+    {
         $_SESSION["errors"] = [];
 
         #Validation for CI
@@ -134,7 +152,7 @@ class UserModel
         #Setting session variables for the input values
         $_SESSION["ci"] = $this->ci;
 
-        if (!empty($_SESSION['errors'])){
+        if (!empty($_SESSION['errors'])) {
             return false;
         } else return true;
     }
@@ -184,9 +202,10 @@ class UserModel
         $_SESSION["ci"] = $this->ci;
         $_SESSION["email"] = $this->email;
 
-        if (!empty($_SESSION['errors'])){
+        if (!empty($_SESSION['errors'])) {
             return false;
-        }return true;
+        }
+        return true;
     }
 
     private function testInput(string $data): string
@@ -199,5 +218,3 @@ class UserModel
         return $data;
     }
 }
-
-

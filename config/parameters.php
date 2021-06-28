@@ -1,4 +1,5 @@
 <?php
+//CONSTANTE DE RUTA PRINCIPAL
 const BASE_URL = "http://localhost/proyecto/";
 
 require_once ("config/database.php");
