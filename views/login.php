@@ -33,4 +33,8 @@
         <br>
         <p>¿No tienes una cuenta? <a href="<?= base_url() ?>user/register">Registrate</a></p>
     </div>
-    <?php
+    <?php if (isset($_SESSION['errors'])) {
+        foreach ($_SESSION["errors"] as $error) {
+            $error = null;
+        }
+    }

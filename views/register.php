@@ -19,7 +19,7 @@
 
         <?php if (isset($_SESSION['messComp'])) : ?>
             <div class="ui attached success message">
-                <p><?=$_SESSION['messComp']?></p>
+                <p><?= $_SESSION['messComp'] ?></p>
             </div>
         <?php endif ?>
 
@@ -69,8 +69,12 @@
         </form>
 
         <br>
-        <p>¿Ya tienes una cuenta? <a href="<?=base_url()?>user/login">Ingresar</a></p>
+        <p>¿Ya tienes una cuenta? <a href="<?= base_url() ?>user/login">Ingresar</a></p>
 
     </div>
-
     <?php
+    if (isset($_SESSION['errors'])) {
+        foreach ($_SESSION["errors"] as $error) {
+            $error = null;
+        }
+    }

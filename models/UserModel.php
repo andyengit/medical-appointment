@@ -97,7 +97,6 @@ class UserModel
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;
                 $_SESSION['logIn'] = true;
-                $_SESSION['messComp'] = "Logeo Completado";
                 $redirect = "Location:".base_url()."patient/inicio";
             } 
         }
@@ -105,13 +104,13 @@ class UserModel
     }
 
     public function verify(): bool {
-        $query = "SELECT CI FROM USERS WHERE CI = ('{$this->ci}')";
+        $query = "SELECT CI,EMAIL FROM USERS WHERE CI = ('{$this->ci}') OR EMAIL = ('{$this->email}')";
         $result = $this->db->query($query);
-        $rows = $result->fetch_all();
+        $rows = $result->fetch_assoc();
         if(sizeof($rows) != 0 ){
-            $_SESSION["errors"]["name"] = "Usuario ya ha sido registrado";
+            if($rows['EMAIL'] == $this->email) $_SESSION["errors"]["email"] = "Correo ya ha sido registrado";
+            if($rows['CI'] == $this->ci) $_SESSION["errors"]["email"] = "Usuario ya ha sido registrado";
             return false;
-            
         }else return true;
     }
 

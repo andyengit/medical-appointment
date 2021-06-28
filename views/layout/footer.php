@@ -1,4 +1,3 @@
-
 </main>
 <footer>
 	<div class="footer-img">
@@ -14,6 +13,7 @@
 		</ul>
 	</div>
 </footer>
+
 </body>
 
 </html>
