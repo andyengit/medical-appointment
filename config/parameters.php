@@ -1,12 +1,14 @@
 <?php
 //CONSTANTE DE RUTA PRINCIPAL
 const BASE_URL = "http://localhost/proyecto/";
-
-require_once ("config/database.php");
-
+//LLAMADO A LA BASE DE DATOS
+require_once("config/database.php");
+//DEFINIMOS TIEMPO DE VENEZUELA
 date_default_timezone_set("America/caracas");
 
-$url = !empty($_GET['url']) ? $_GET['url'] : 'User/index';
+//CONFIGURACION URL CONTROLLADOR/METODO
+
+$url = !empty($_GET['url']) ? $_GET['url'] : ($_SESSION['globalRol'] == 'User' ? "User/index" : $_SESSION['globalRol'] . "/inicio");
 $arrUrl = explode("/", $url);
 $controller = $arrUrl[0];
 $method = $arrUrl[0];
@@ -25,5 +27,3 @@ if (!empty($arrUrl[2])) {
         $params = trim($params, ',');
     }
 }
-
-

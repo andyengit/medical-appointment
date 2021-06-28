@@ -8,7 +8,7 @@ class Errors extends Controllers{
 
     public function notFound()
     {
-        $this->views->getView($this, "404");
+        $this->views->getView($this,'errors', "notFound");
     }
     
 }
