@@ -25,32 +25,25 @@
             </div>
         </div>
         <!--    FORM  -->
-        <form class="ui form" method="GET" action="<?=base_url()?>patient/stepOne">
+        <form class="ui form" method="GET" action="<?= base_url() ?>patient/stepTwo">
             <div class="fields">
                 <div class="six wide field">
                     <label>Especialidad</label>
                     <select class="ui search dropdown" name="Especialidad">
                         <option value="">Seleccionar</option>
-                        <option value="1">Médicina general</option>
-                        <option value="2">Cirujano</option>
-                        <option value="3">Internista</option>
+                        <?php foreach ($_SESSION['specialities'] as $specialities){?>
+                            <option value="<?=$specialities[0]?>"><?=$specialities[1]?></option> 
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="six wide field">
-                    <label>Centro Medico</label>
-                    <select class="ui search dropdown" name="CENTRO">
-                        <option value="">Seleccionar</option>
-                        <option value="">Centro</option>
-                        <option value="">Este</option>
-                        <option value="">El Cuji</option>
-                        <option value="">San jancinto</option>
-                    </select>
+                    <label>Fecha</label>
+                    <input name="fecha" type="date" min="<?= date('Y-m-d', time()) ?>">
                 </div>
             </div>
             <div class="fields">
                 <div class="field">
-                    <label>Fecha</label>
-                    <input name="fecha" type="date" min="<?= date('Y-m-d', time()) ?>">
+
                 </div>
             </div>
             <button class="ui button primary" type="submit">Buscar</button>

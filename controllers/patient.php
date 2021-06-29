@@ -13,11 +13,31 @@ class Patient extends Controllers
         
     }
     public function stepOne(){
+        $patient = new PatientModel();
+
+        $patient->searchSpecialities();
         $this->views->getView($this,$this->role, "reservarStepOne");
+        $_SESSION['specialities'] = NULL;
+
     }
     public function stepTwo(){
-        $this->views->getView($this,$this->role, "reservarStepTwo");
+
+        if($_SERVER["REQUEST_METHOD"] != "GET" || !isset($_GET)) {
+            header("Location:".base_url());
+        }
+
+            $patient = new PatientModel();
+            $patient->setAppointmentsSpecialities($_GET['Especialidad']);
+
+            $this->views->getView($this,$this->role, "reservarStepTwo");    
+
         
+        
+        
+    }
+
+    public function stepThree(){
+
     }
 
     public function LogOut(){

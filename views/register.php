@@ -74,7 +74,5 @@
     </div>
     <?php
     if (isset($_SESSION['errors'])) {
-        foreach ($_SESSION["errors"] as $error) {
-            $error = null;
-        }
+        $_SESSION['errors'] = NULL;
     }

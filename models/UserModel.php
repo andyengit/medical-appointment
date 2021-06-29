@@ -97,19 +97,18 @@ class UserModel
     {
         $redirect = "Location:" . base_url() . "user/register";
         if ($this->validateR() && $this->verify()) {
-            $query = "INSERT INTO users VALUES("
-                . "NULL, "
+            $query = "INSERT INTO USERS VALUES("
+                . "'{$this->ci}', "
+                . "'1', "
                 . "'{$this->name}', "
                 . "'{$this->lastName}', "
                 . "'{$this->password}', "
                 . "'{$this->email}', "
-                . "'{$this->ci}', "
                 . "'{$this->phone}', "
                 . "'{$this->birthDate}', "
                 . "'patient')";
             $save = $this->db->query($query);
             if ($save) {
-                $_SESSION['messComp'] = "REGISTRO COMPLETO";
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;
                 $_SESSION['logIn'] = true;

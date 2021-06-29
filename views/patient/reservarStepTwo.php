@@ -42,11 +42,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php  foreach ($_SESSION['userDocInfo'] as $key){?>
                     <tr>
                         <td>
                             <h4 class="ui image header">
                                 <i class="user md icon ui rounded "></i>
-                                <div class="content">Dr Angel Colombo<div class="sub header">Cirujano</div>
+                                <div class="content">Dr. <?= $key[2]." ".$key[3] ?><div class="sub header">Cirujano</div>
                                 </div>
                             </h4>
                         </td>
@@ -74,39 +75,9 @@
                             </form>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <h4 class="ui image header">
-                                <i class="user md icon ui small rounded"></i>
-                                <div class="content">Dr Angel Colombo<div class="sub header">Cirujano</div>
-                                </div>
-                            </h4>
-                        </td>
-                        <td>
-                            <div class="ui list">
-                                <a class="item">6:00</a>
-                                <a class="item">7:00</a>
-                                <a class="item">8:00</a>
-                            </div>
-                        </td>
-                        <td>
-                            <form class="ui form">
-                                <div class="field">
-                                    <label>Centro Medico</label>
-                                    <select class="ui search dropdown" name>
-                                        <option value="">6:00</option>
-                                        <option value="">7:00</option>
-                                        <option value="">8:00</option>
-                                    </select>
-
-                                </div>
-                                <div class="field">
-                                    <button class="ui button primary" type="submit">RESERVAR</button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
+  
