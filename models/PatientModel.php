@@ -28,15 +28,15 @@ class PatientModel
     }
     public function searchAppointments()
     {
-        $sqlOne = "SELECT * FROM DOCTORS WHERE SPECIALITY_ID = ('{$this->appointmentsSpecialities}')";
+        $sqlOne = "SELECT * FROM doctors WHERE speciality_id = ('{$this->appointmentsSpecialities}')";
         $queryOne = $this->db->query($sqlOne);
         $_SESSION['docInfo'] = $queryOne->fetch_all();
             $arrCi  = "";
             foreach ($_SESSION['docInfo'] as $iterador) {
-                $arrCi .= $iterador[1] . " OR CI = ";
+                $arrCi .= $iterador[1] . " OR ci = ";
             }
-            $arrCi = rtrim($arrCi, " OR CI = ");
-            $sqlTwo = "SELECT * FROM USERS WHERE CI = " . $arrCi;
+            $arrCi = rtrim($arrCi, " OR ci = ");
+            $sqlTwo = "SELECT * FROM users WHERE ci = " . $arrCi;
             $queryTwo = $this->db->query($sqlTwo);
             $_SESSION['userDocInfo'] = $queryTwo->fetch_all();
     }

@@ -64,24 +64,24 @@ class UserModel
     {
         $reditect = "Location:" . base_url() . "user/login";
         if ($this->validateL()) {
-            $query = "SELECT CI,PASSWORD,ROLE,NAME,LASTNAME FROM USERS WHERE CI = ('{$this->ci}')";
+            $query = "SELECT ci, password, role, name, lastname FROM users WHERE ci = ('{$this->ci}')";
             $result = $this->db->query($query);
             $rows = $result->fetch_assoc();
             var_dump($rows);
-            if (sizeof($rows) != 0) {
-                if ($this->ci == $rows['CI'] && password_verify($this->passwordL, $rows['PASSWORD'])) {
-                    if ($rows['ROLE'] == 'doc') {
-                        $_SESSION['name'] = $rows['NAME'];
-                        $_SESSION['lastname'] = $rows['LASTNAME'];
-                        $_SESSION['globalRol'] = $rows['ROLE'];
+            if ($rows != NULL && sizeof($rows) != 0) {
+                if ($this->ci == $rows['ci'] && password_verify($this->passwordL, $rows['password'])) {
+                    if ($rows['role'] == 'doc') {
+                        $_SESSION['name'] = $rows['name'];
+                        $_SESSION['lastname'] = $rows['lastname'];
+                        $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
                         $reditect = "Location:" . base_url()."doc/inicio";
                     }
-                    if ($rows['ROLE'] == 'patient') {
-                        $_SESSION['name'] = $rows['NAME'];
-                        $_SESSION['lastname'] = $rows['LASTNAME'];
-                        $_SESSION['globalRol'] = $rows['ROLE'];
+                    if ($rows['role'] == 'patient') {
+                        $_SESSION['name'] = $rows['name'];
+                        $_SESSION['lastname'] = $rows['lastname'];
+                        $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
                         $reditect = "Location:" . base_url() ."patient/inicio";
@@ -97,17 +97,18 @@ class UserModel
     {
         $redirect = "Location:" . base_url() . "user/register";
         if ($this->validateR() && $this->verify()) {
-            $query = "INSERT INTO USERS VALUES("
+            $query = "INSERT INTO users VALUES("
                 . "'{$this->ci}', "
-                . "'1', "
+                . "1, "
                 . "'{$this->name}', "
                 . "'{$this->lastName}', "
                 . "'{$this->password}', "
                 . "'{$this->email}', "
                 . "'{$this->phone}', "
                 . "'{$this->birthDate}', "
-                . "'patient')";
+                . "'patient');";
             $save = $this->db->query($query);
+
             if ($save) {
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;
@@ -120,12 +121,13 @@ class UserModel
 
     public function verify(): bool
     {
-        $query = "SELECT CI,EMAIL FROM USERS WHERE CI = ('{$this->ci}') OR EMAIL = ('{$this->email}')";
+        $query = "SELECT ci,email FROM users WHERE ci = ('{$this->ci}') OR email = ('{$this->email}');";
         $result = $this->db->query($query);
         $rows = $result->fetch_assoc();
-        if (sizeof($rows) != 0) {
-            if ($rows['EMAIL'] == $this->email) $_SESSION["errors"]["email"] = "Correo ya ha sido registrado";
-            if ($rows['CI'] == $this->ci) $_SESSION["errors"]["email"] = "Usuario ya ha sido registrado";
+
+        if ($rows != NULL && sizeof($rows) != 0) {
+            if ($rows['email'] == $this->email) $_SESSION["errors"]["email"] = "Correo ya ha sido registrado";
+            if ($rows['ci'] == $this->ci) $_SESSION["errors"]["email"] = "Usuario ya ha sido registrado";
             return false;
         } else return true;
     }
