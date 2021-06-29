@@ -1,5 +1,5 @@
 <?php
-$controllerFile = "controllers/" . $controller . ".php";
+$controllerFile = "controllers/" . strtolower($controller) . ".php";
 if (file_exists($controllerFile)) {
 	
 
