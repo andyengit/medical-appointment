@@ -48,7 +48,7 @@ CONSTRAINT uq_ci_patient UNIQUE (ci)
 )ENGINE=InnoDb;
 
 INSERT INTO `patients` (`id`, `ci`, `address`, `postcode`) VALUES
-(5, '28493778', 'Lara', 3001);
+(5, '28493778', 'La Cruz, Iribarren', 3001);
 
 CREATE TABLE specialities(
 id              INT(255) auto_increment NOT NULL,

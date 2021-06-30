@@ -1,4 +1,6 @@
 <?php
+require_once "./models/CenterModel.php";
+
 class User extends Controllers
 {
 
@@ -49,6 +51,8 @@ class User extends Controllers
         if ($_POST["ci"] == 1) {
             $center = new CenterModel();
             $center->setPassword($_POST["password"]);
+            $header = $center->login();
+            header($header);
         }
 
 
