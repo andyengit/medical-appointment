@@ -4,7 +4,7 @@
                     <img src="http://localhost/proyecto/assets/img/noticia.jpg" />
                     <div class="contenedor-text">
                         <b>TU NUEVO PORTAL PARA AGENDAR CITAS MEDICAS</b>
-                        <p>CON TUS DOCTORES Y CENTROS MEDICOS DE TU PREFERENCIA</p>
+                        <p>CON TUS DOCTORES DE PREFERENCIA</p>
                     </div>
                 </div>
             </section>

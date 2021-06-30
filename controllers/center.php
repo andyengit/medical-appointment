@@ -3,7 +3,7 @@ class Center extends Controllers
 {
     function __construct()
     {
-        $this->role = 'doc';
+        $this->role = 'Center';
         parent::__construct();
 
     }
@@ -17,5 +17,9 @@ class Center extends Controllers
         session_destroy();
         $_SESSION = NULL;
         header("Location: ".base_url());
+    }
+
+    public function registerSpeciality() {
+        $this->views->getView($this, $this->role, "registerSpeciality");
     }
 }
