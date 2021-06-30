@@ -25,7 +25,7 @@
             </div>
         </div>
         <!--    FORM  -->
-        <form class="ui form" method="GET" action="<?= base_url() ?>patient/stepTwo">
+        <form class="ui form" method="GET" action="<?=base_url()?>patient/stepTwo">
             <div class="fields">
                 <div class="six wide field">
                     <label>Especialidad</label>

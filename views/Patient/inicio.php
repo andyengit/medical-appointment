@@ -1,7 +1,7 @@
             <!--NOTICIAS-->
             <section class="noticia">
                 <div class="contenedor">
-                    <img src="http://localhost/proyecto/assets/img/noticia.jpg" />
+                    <img src="<?=base_url()?>assets/img/noticia.jpg" />
                     <div class="contenedor-text">
                         <b>TU NUEVO PORTAL PARA AGENDAR CITAS MEDICAS</b>
                         <p>CON TUS DOCTORES DE PREFERENCIA</p>

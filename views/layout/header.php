@@ -6,8 +6,8 @@
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/estetos.png" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/semantic.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.css?ts=<?= time() ?>">
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/28d6ce3668.js" crossorigin="anonymous"></script>
     <script src="assets/javascript/semantic.js"></script>
 </head>

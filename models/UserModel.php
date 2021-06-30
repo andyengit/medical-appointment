@@ -71,7 +71,6 @@ class UserModel
             $query = "SELECT ci, password, role, name, lastname FROM users WHERE ci = ('{$this->ci}')";
             $result = $this->db->query($query);
             $rows = $result->fetch_assoc();
-            var_dump($rows);
             if ($rows != NULL && sizeof($rows) != 0) {
                 if ($this->ci == $rows['ci'] && password_verify($this->passwordL, $rows['password'])) {
                     if ($rows['role'] == 'doc') {
@@ -89,8 +88,7 @@ class UserModel
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
                         $reditect = "Location:" . base_url() . "doc/inicio";
-                    }
-                    if ($rows['role'] == 'patient') {
+                    }else if ($rows['role'] == 'patient') {
                         $queryThree = "SELECT id FROM patients WHERE ci = '{$this->ci}' ";
                         $saveThree = $this->db->query($queryThree);
                         $arrId = $saveThree->fetch_array();
@@ -105,7 +103,6 @@ class UserModel
                 } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
             } else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
         }
-        echo $reditect;
         return $reditect;
     }
 

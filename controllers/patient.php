@@ -26,7 +26,7 @@ class Patient extends Controllers
 
         if ($_SERVER["REQUEST_METHOD"] != "GET" || !isset($_GET['Especialidad']) || !isset($_GET['fecha']) || empty($_GET['Especialidad']) || empty($_GET['fecha']) )  {
             header("Location:" . base_url()."patient/stepOne");
-        }
+        } 
 
         $patient = new PatientModel();
         $patient->setAppointmentsSpecialities($_GET['Especialidad']);

@@ -1,5 +1,4 @@
 <?php
-require_once "./models/CenterModel.php";
 
 class User extends Controllers
 {
@@ -45,6 +44,7 @@ class User extends Controllers
 
     public function validateLogin()
     {
+     
         if ($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:" . base_url());
 
@@ -63,5 +63,6 @@ class User extends Controllers
 
         $header = $user->search();
         header($header);
+
     }
 }
