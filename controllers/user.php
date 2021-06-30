@@ -21,6 +21,7 @@ class User extends Controllers
         $this->views->getView($this,$this->role, "register");
 
     }
+    
     public function validateRegister() {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url());
@@ -30,6 +31,7 @@ class User extends Controllers
         $user->setName($_POST["name"]);
         $user->setLastName($_POST["lastName"]);
         $user->setCi($_POST["ci"]);
+        $user->setCityId($_POST["city"]);
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["password"]);
         $user->setBirthDate($_POST["birthDate"]);

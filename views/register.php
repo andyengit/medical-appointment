@@ -59,6 +59,18 @@
                     <input type="number" name="phone" id="phone">
                 </div>
             </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label for="state">Estado de residencia:</label>
+                    <select name="state" id="state"></select>
+                </div>
+                <div class="field">
+                    <label for="city">Ciudad:</label>
+                    <select name="city" id="city"></select>
+                </div>
+            </div>
+
             <div class="field">
                 <div class="ui checkbox">
                     <input type="checkbox" tabindex="0">
@@ -72,6 +84,9 @@
         <p>¿Ya tienes una cuenta? <a href="<?= base_url() ?>user/login">Ingresar</a></p>
 
     </div>
+
+<script src="../assets/javascript/getAdresses.js"></script>
+
     <?php
     if (isset($_SESSION['errors'])) {
         $_SESSION['errors'] = NULL;

@@ -1,13 +1,13 @@
 <?php
 class UserModel
 {
-    private $id;
     private $name;
     private $lastName;
     private $password;
     private $passwordL;
     private $email;
     private $ci;
+    private $cityId;
     private $phone;
     private $birthDate;
     private $db;
@@ -46,6 +46,10 @@ class UserModel
     function setCi(string $ci)
     {
         $this->ci = $this->testInput($ci);
+    }
+
+    function setCityId(string $cityId) {
+        $this->cityId = $this->testInput($cityId);
     }
 
     function setPhone(string $phone)
@@ -99,7 +103,7 @@ class UserModel
         if ($this->validateR() && $this->verify()) {
             $query = "INSERT INTO users VALUES("
                 . "'{$this->ci}', "
-                . "1, "
+                . "{$this->cityId}, "
                 . "'{$this->name}', "
                 . "'{$this->lastName}', "
                 . "'{$this->password}', "
