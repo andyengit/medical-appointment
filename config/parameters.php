@@ -1,6 +1,6 @@
 <?php
 //CONSTANTE DE RUTA PRINCIPAL
-const BASE_URL = "http://localhost/proyecto/";
+const BASE_URL = "https://revemed.herokuapp.com/";
 //LLAMADO A LA BASE DE DATOS
 require_once("config/database.php");
 //DEFINIMOS TIEMPO DE VENEZUELA
