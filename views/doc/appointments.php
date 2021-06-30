@@ -20,7 +20,7 @@
                             <thead>
                                 <tr>
                                     <th><b>ID</b></th>
-                                    <th>Doctor</th>
+                                    <th>Paciente</th>
                                     <th>Dia</th>
                                     <th>Hora</th>
                                     <th>Editar</th>
@@ -31,7 +31,7 @@
                                 <?php foreach ($_SESSION['appointmentsList'] as $key) { ?>
                                     <tr>
                                         <td><?= $key[0] ?></td>
-                                        <td>Dr/a. <?= $key[1] . " " . $key[2] ?></td>
+                                        <td><?= $key[1] . " " . $key[2] ?></td>
                                         <td><?= $key[3] ?></td>
                                         <td><?= $key[4] ?></td>
                                         <td>

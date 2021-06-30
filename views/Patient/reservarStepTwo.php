@@ -1,11 +1,13 @@
 <main class="mid">
     <div class="cont">
+
         <div>
-            <i class="ui icon ">
-                
-            </i><h3><a href="<?= base_url() ?>patient/stepOne">atras</a></h3>
-        </div>
-        <div>
+            <a href="<?= base_url() ?>patient/stepOne">
+                <button class="ui basic button primary">
+                    <i class="icon angle double left"></i>
+                    Atras
+                </button>
+            </a>
             <h2>Reserva tu cita médica</h2>
         </div>
         <!--    STEPS   -->

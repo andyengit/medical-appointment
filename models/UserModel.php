@@ -75,10 +75,14 @@ class UserModel
             if ($rows != NULL && sizeof($rows) != 0) {
                 if ($this->ci == $rows['ci'] && password_verify($this->passwordL, $rows['password'])) {
                     if ($rows['role'] == 'doc') {
-                        $queryThree = "SELECT id FROM doctors WHERE ci = '{$this->ci}' ";
+                        $queryThree = "SELECT doctors.id,specialities.name FROM doctors 
+                        INNER JOIN specialities 
+                        ON specialities.id = doctors.speciality_id 
+                        WHERE doctors.ci = '{$this->ci}'";
                         $saveThree = $this->db->query($queryThree);
                         $arrId = $saveThree->fetch_array();
                         $_SESSION['globalId'] = $arrId[0];
+                        $_SESSION['speciality'] = $arrId[1];
                         $_SESSION['name'] = $rows['name'];
                         $_SESSION['lastname'] = $rows['lastname'];
                         $_SESSION['globalRol'] = $rows['role'];
@@ -118,6 +122,8 @@ class UserModel
             $saveThree = $this->db->query($queryThree);
             $arrId = $saveThree->fetch_array();
             if ($save && $saveTwo && $saveThree) {
+                $_SESSION['name'] = $this->name;
+                $_SESSION['lastname'] = $this->lastName;
                 $_SESSION['globalId'] = $arrId[0];
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;

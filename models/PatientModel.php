@@ -6,10 +6,14 @@ class PatientModel
     private $appointmentsSpecialities;
     private $appointmentsDoc;
     private $appointmentsTime;
+    private $dateNow;
 
     function __construct()
     {
         $this->db = Database::connect();
+    }
+    public function setDateNow(){
+        $this->dateNow =  date('Y-m-d',time());
     }
 
     public function setId($date)
@@ -56,19 +60,31 @@ class PatientModel
         $_SESSION['appointment']['specialities'] = $this->appointmentsSpecialities;
         $_SESSION['appointment']['date'] = $this->appointmentsDate;
         $_SESSION['appointment']['specialitiesName'] = $_SESSION['docInfo'][0][7];
-        $_SESSION['appointment']['name'] = "Dr/a. " . $_SESSION['docInfo'][0][0] . " " . $_SESSION['docInfo'][0][1];
     }
+
 
     public function verifyAppointments(): bool
     {
-        $sql = "SELECT doctor_id,patient_id,a_date,a_time FROM appointments WHERE doctor_id = '{$this->appointmentsDoc}' 
-            AND a_date = '{$this->appointmentsDate}' AND a_time = '{$this->appointmentsTime}'";
+        $sql = "SELECT appointments.doctor_id,
+            appointments.patient_id,
+            appointments.a_date,
+            appointments.a_time
+            FROM appointments
+            WHERE appointments.doctor_id = '{$this->appointmentsDoc}' 
+            AND appointments.a_date = '{$this->appointmentsDate}' 
+            AND appointments.a_time = '{$this->appointmentsTime}'";
         $query = $this->db->query($sql);
         $result = $query->fetch_all();
         if ($result != NULL && sizeof($result) != 0) {
             $_SESSION['errors']['noEmpty'] = "Ya Existe una cita a esa hora.";
             return false;
         } else {
+            $sqlTwo = "SELECT users.name,users.lastname FROM users 
+            INNER JOIN doctors ON doctors.ci = users.ci
+            WHERE doctors.id = '{$this->appointmentsDoc}'";
+            $queryTwo = $this->db->query($sqlTwo);
+            $resultTwo = $queryTwo->fetch_all();
+            $_SESSION['appointment']['name'] = "Dr/a. ". $resultTwo[0][0]." ".$resultTwo[0][1];
             $_SESSION['appointment']['Doc'] = $this->appointmentsDoc;
             $_SESSION['appointment']['time'] = $this->appointmentsTime;
             return true;
@@ -85,8 +101,31 @@ class PatientModel
         } else return false;
     }
     public function appointmentsList(){
-        $sql = "SELECT * FROM appointments";
+        $sql = "SELECT appointments.id,users.name,users.lastname,appointments.a_date,appointments.a_time FROM appointments 
+        INNER JOIN doctors ON doctors.id = appointments.doctor_id 
+        INNER JOIN users ON doctors.ci = users.ci 
+        WHERE appointments.patient_id = ('{$this->patientId}') AND appointments.a_date >= ('{$this->dateNow}')
+        ORDER BY appointments.a_date,appointments.a_time DESC;";
         $query = $this->db->query($sql);
-        $_SESSION['appointmentsList'] = $query->fetch_all();
+        $result = $query->fetch_all();
+        if(sizeof($result) !=0 ){
+            $_SESSION['appointmentsList'] = $result;
+        } else{
+            $_SESSION['errors']['appointmentEmpty'] = "No hay ninguna cita proxima.";
+        }
+    }
+    public function appointmentsLastList(){
+        $sql = "SELECT appointments.id,users.name,users.lastname,appointments.a_date,appointments.a_time FROM appointments 
+        INNER JOIN doctors ON doctors.id = appointments.doctor_id 
+        INNER JOIN users ON doctors.ci = users.ci 
+        WHERE appointments.patient_id = ('{$this->patientId}') 
+        ORDER BY appointments.a_date DESC;";
+        $query = $this->db->query($sql);
+        $result = $query->fetch_all();
+        if(sizeof($result) !=0 ){
+            $_SESSION['appointmentsLastList'] = $result;
+        } else{
+            $_SESSION['errors']['appointmentEmpty'] = "No Hay citas Registradas";
+        }
     }
 }

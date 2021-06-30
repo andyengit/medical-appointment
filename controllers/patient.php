@@ -73,9 +73,21 @@ class Patient extends Controllers
     public function appointments(){
 
         $patient = new PatientModel();
+        $patient->setId($_SESSION['globalId']);
+        $patient->setDateNow();
         $patient->appointmentsList();
         $this->views->getView($this, $this->role, "appointments");
         $_SESSION['appointmentsList'] = NULL;
+        $_SESSION['errors'] = NULL;
+    }
+    public function appointmentsLast(){
+
+        $patient = new PatientModel();
+        $patient->setId($_SESSION['globalId']);
+        $patient->appointmentsLastList();
+        $this->views->getView($this, $this->role, "lastAppointments");
+        $_SESSION['appointmentsList'] = NULL;
+        $_SESSION['errors'] = NULL;
     }
 
 

@@ -12,8 +12,12 @@ class Doc extends Controllers
         $this->views->getView($this,$this->role, "inicio");
         
     }
-    public function citas(){
-        $this->views->getView($this,$this->role, "citas");
+    public function appointments(){
+        $doc = new DocModel();
+        $doc->setId($_SESSION['globalId']);
+        $doc->setDateNow();
+        $doc->appointmentsList();
+        $this->views->getView($this,$this->role, "appointments");
 
     }
     
