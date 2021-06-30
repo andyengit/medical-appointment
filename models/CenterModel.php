@@ -9,7 +9,7 @@ class CenterModel
     {
         $this->db = Database::connect();
     }
-
+    
     function setPassword($password) {
         $this->password = $password;
     }

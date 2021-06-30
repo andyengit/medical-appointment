@@ -1,7 +1,7 @@
 <main class="mid">
     <div class="cont">
         <div>
-            <i class="ui icon user-doc">
+            <i class="ui icon ">
                 
             </i><h3><a href="<?= base_url() ?>patient/stepOne">atras</a></h3>
         </div>

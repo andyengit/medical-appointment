@@ -1,29 +1,30 @@
 <?php
 class User extends Controllers
-{   
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->role = 'User';
         parent::__construct();
-
     }
 
-    public function index(){
-        $this->views->getView($this,$this->role, "inicio");
-        
+    public function index()
+    {
+        $this->views->getView($this, $this->role, "inicio");
     }
 
-    public function login(){
-        $this->views->getView($this,$this->role, "login");
-
+    public function login()
+    {
+        $this->views->getView($this, $this->role, "login");
     }
-    public function register(){
-        $this->views->getView($this,$this->role, "register");
-
+    public function register()
+    {
+        $this->views->getView($this, $this->role, "register");
     }
-    public function validateRegister() {
-        if($_SERVER["REQUEST_METHOD"] != "POST")
-            header("Location:".base_url());
+    public function validateRegister()
+    {
+        if ($_SERVER["REQUEST_METHOD"] != "POST")
+            header("Location:" . base_url());
 
         $user = new UserModel();
 
@@ -40,17 +41,17 @@ class User extends Controllers
         header($header);
     }
 
-    public function validateLogin() {
-        if($_SERVER["REQUEST_METHOD"] != "POST")
-            header("Location:".base_url());
+    public function validateLogin()
+    {
+        if ($_SERVER["REQUEST_METHOD"] != "POST")
+            header("Location:" . base_url());
 
-        if($_POST["ci"] == 1) {
+        if ($_POST["ci"] == 1) {
             $center = new CenterModel();
             $center->setPassword($_POST["password"]);
-
-            
         }
-        
+
+
         $user = new UserModel();
 
         $user->setCi($_POST['ci']);
@@ -58,6 +59,5 @@ class User extends Controllers
 
         $header = $user->search();
         header($header);
-
     }
 }

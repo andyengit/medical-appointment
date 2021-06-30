@@ -30,6 +30,13 @@ CONSTRAINT pk_users PRIMARY KEY (ci),
 CONSTRAINT uq_email UNIQUE (email)
 )ENGINE=InnoDb;
 
+INSERT INTO `users` (`ci`, `city_id`, `name`, `lastname`, `password`, `email`, `phone`, `birth_date`, `role`) VALUES
+('28493778', 1, 'Anderson', 'Armeya', '$2y$04$BPDx1N.V8DiMGrmYmDsTIeabKZxbAb3iYZ07z8qRPk.ClkNIhQO8a', 'anderson.armeya@gmail.com', '04125119913', '2002-07-08', 'patient'),
+('28493779', 1, 'Carlos', 'Cecilio', '$2y$04$41MiqQAcOXZOYEIrUj7rm.V.tX5AwHlW2DXqfC97wOwbFiN/jOUcu', 'carlos@gmail.com', '04125119913', '2002-05-08', 'doc'),
+('28493780', 1, 'Zuleima', 'Garcia', '$2y$04$41MiqQAcOXZOYEIrUj7rm.V.tX5AwHlW2DXqfC97wOwbFiN/jOUcu', 'zuleimae@gmail.com', '04125119913', '2002-05-08', 'doc'),
+('28493781', 1, 'Maria', 'Gabriela', '$2y$04$41MiqQAcOXZOYEIrUj7rm.V.tX5AwHlW2DXqfC97wOwbFiN/jOUcu', 'Maria@gmail.com', '04125119913', '2002-05-08', 'doc');
+COMMIT;
+
 CREATE TABLE patients(
 id              INT(255) auto_increment NOT NULL,
 ci              VARCHAR(255) NOT NULL,
@@ -40,12 +47,20 @@ CONSTRAINT fk_user_patient FOREIGN KEY (ci) REFERENCES users(ci),
 CONSTRAINT uq_ci_patient UNIQUE (ci)
 )ENGINE=InnoDb;
 
+INSERT INTO `patients` (`id`, `ci`, `address`, `postcode`) VALUES
+(5, '28493778', 'Lara', 3001);
+
 CREATE TABLE specialities(
 id              INT(255) auto_increment NOT NULL,
 name            VARCHAR(255) NOT NULL,
 CONSTRAINT pk_specialities PRIMARY KEY (id),
 CONSTRAINT uq_speciality_name UNIQUE (name)
 )ENGINE=InnoDb;
+
+INSERT INTO `specialities` (`id`, `name`) VALUES
+(2, 'Cirujano'),
+(1, 'Pediatria');
+COMMIT;
 
 CREATE TABLE doctors(
 id              INT(255) auto_increment NOT NULL,
@@ -59,6 +74,12 @@ CONSTRAINT fk_user_doctor FOREIGN KEY (ci) REFERENCES users(ci),
 CONSTRAINT fk_sṕeciality_doctor FOREIGN KEY (speciality_id) REFERENCES specialities(id),
 CONSTRAINT uq_ci_doctor UNIQUE (ci)
 )ENGINE=InnoDb;
+
+INSERT INTO `doctors` (`id`, `ci`, `speciality_id`, `start_hour`, `end_hour`, `cost`) VALUES
+(1, '28493780', 1, '06:00:00', '10:00:00', '100.0000'),
+(2, '28493779', 1, '06:00:00', '10:00:00', '120.0000'),
+(3, '28493781', 2, '06:00:00', '10:00:00', '180.0000');
+
 
 CREATE TABLE appointments(
 id              INT(255) auto_increment NOT NULL,
