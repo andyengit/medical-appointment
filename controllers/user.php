@@ -44,6 +44,13 @@ class User extends Controllers
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url());
 
+        if($_POST["ci"] == 1) {
+            $center = new CenterModel();
+            $center->setPassword($_POST["password"]);
+
+            
+        }
+        
         $user = new UserModel();
 
         $user->setCi($_POST['ci']);
