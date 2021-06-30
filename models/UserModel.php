@@ -7,10 +7,10 @@ class UserModel
     private $passwordL;
     private $email;
     private $ci;
-    private $cityId;
     private $phone;
     private $birthDate;
     private $db;
+    private $cityId;
 
     function __construct()
     {
@@ -48,14 +48,15 @@ class UserModel
         $this->ci = $this->testInput($ci);
     }
 
-    function setCityId(string $cityId) {
-        $this->cityId = $this->testInput($cityId);
-    }
-
     function setPhone(string $phone)
     {
         $this->phone = $this->testInput($phone);
     }
+    
+    function setCityId(string $cityId) {
+        $this->cityId = $this->testInput($cityId);
+    }
+
 
     function setBirthDate(string $birthDate)
     {
@@ -75,20 +76,28 @@ class UserModel
             if ($rows != NULL && sizeof($rows) != 0) {
                 if ($this->ci == $rows['ci'] && password_verify($this->passwordL, $rows['password'])) {
                     if ($rows['role'] == 'doc') {
+                        $queryThree = "SELECT id FROM doctors WHERE ci = '{$this->ci}' ";
+                        $saveThree = $this->db->query($queryThree);
+                        $arrId = $saveThree->fetch_array();
+                        $_SESSION['globalId'] = $arrId[0];
                         $_SESSION['name'] = $rows['name'];
                         $_SESSION['lastname'] = $rows['lastname'];
                         $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
-                        $reditect = "Location:" . base_url()."doc/inicio";
+                        $reditect = "Location:" . base_url() . "doc/inicio";
                     }
                     if ($rows['role'] == 'patient') {
+                        $queryThree = "SELECT id FROM patients WHERE ci = '{$this->ci}' ";
+                        $saveThree = $this->db->query($queryThree);
+                        $arrId = $saveThree->fetch_array();
+                        $_SESSION['globalId'] = $arrId[0];
                         $_SESSION['name'] = $rows['name'];
                         $_SESSION['lastname'] = $rows['lastname'];
                         $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
-                        $reditect = "Location:" . base_url() ."patient/inicio";
+                        $reditect = "Location:" . base_url() . "patient/inicio";
                     }
                 } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
             } else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
@@ -101,23 +110,22 @@ class UserModel
     {
         $redirect = "Location:" . base_url() . "user/register";
         if ($this->validateR() && $this->verify()) {
-            $query = "INSERT INTO users VALUES("
-                . "'{$this->ci}', "
-                . "{$this->cityId}, "
-                . "'{$this->name}', "
-                . "'{$this->lastName}', "
-                . "'{$this->password}', "
-                . "'{$this->email}', "
-                . "'{$this->phone}', "
-                . "'{$this->birthDate}', "
-                . "'patient');";
-            $save = $this->db->query($query);
 
-            if ($save) {
+            $query = "INSERT INTO users VALUES ('{$this->ci}', 1,'{$this->name}','{$this->lastName}', '{$this->password}','{$this->email}','{$this->phone}','{$this->birthDate}','patient');";
+            $queryTwo = "INSERT INTO patients VALUES (NULL,'{$this->ci}','Lara','3001');";
+            $save = $this->db->query($query);
+            $saveTwo = $this->db->query($queryTwo);
+            $queryThree = "SELECT id FROM patients WHERE ci = '{$this->ci}' ";
+            $saveThree = $this->db->query($queryThree);
+            $arrId = $saveThree->fetch_array();
+            if ($save && $saveTwo && $saveThree) {
+                $_SESSION['globalId'] = $arrId[0];
                 $_SESSION['globalRol'] = 'patient';
                 $_SESSION['globalCI'] = $this->ci;
                 $_SESSION['logIn'] = true;
                 $redirect = "Location:" . base_url() . "patient/inicio";
+            } else {
+                $_SESSION['errors']['RegisterFail'] = 'Registro Incorrecto';
             }
         }
         return $redirect;

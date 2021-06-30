@@ -1,5 +1,4 @@
-
-<section class="body">
+<main>
     <div class="cont">
         <div>
             <h2>Reserva tu cita médica</h2>
@@ -26,34 +25,28 @@
             </div>
         </div>
         <!--    FORM  -->
-        <br><br><br>
+        <br><br>
         <div class="ui centered grid">
-            <div class="ui card">
-                <div class="content">
-                    <a class="header">Cirujano</a>
-                    <div class="meta">
-                        <span class="date">Lunes 23/08/2021</span>
-                    </div>
-                    <div class="description">
-                        Dr. Angel Colombo
-                    </div>
-                </div>
-                <div class="extra content">
-                    <i class="edit icon"> </i>Hora - 6:00
-                </div>
-                <button class="ui button primary">CONFIRMAR</button>
-                <br>
-                <h2 class="ui icon header">
-                    <i class="check green icon"></i>
+            <form action="<?=base_url()?>patient/stepOk" method="POST">
+                <div class="ui card">
                     <div class="content">
-                        Listo
-                        <div class="sub header">Su cita ha sido reservada ¡con exito!</div>
+                        <a class="header"><?=$_SESSION['appointment']['specialitiesName']?></a>
+                        <div class="meta">
+                            <span class="date"><?=date('d/m/Y', strtotime($_SESSION['appointment']['date']))?></span>
+                        </div>
+                        <div class="description">
+                            <?=$_SESSION['appointment']['name']?>
+                        </div>
                     </div>
-                </h2>
-            </div>
+                    <div class="extra content">
+                        <i class="edit icon"> </i>Hora - <?=$_SESSION['appointment']['time']?>
+                    </div>
+                    <input type="hidden" name="Doc" value="<?=$_GET['Doc']?>">
+                    <input type="hidden" name="Hora"value="<?=$_GET['Hora']?>" >
+                    <button type="submit" class="ui button primary">CONFIRMAR</button>
 
+                </div>
+            </form>
         </div>
 
     </div>
-
-</section>

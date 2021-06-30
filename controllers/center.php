@@ -13,13 +13,15 @@ class Center extends Controllers
         
     }
     
+    public function registerSpeciality() {
+        $this->views->getView($this, $this->role, "registerSpeciality");
+    }
+    
     public function LogOut(){
         session_destroy();
         $_SESSION = NULL;
         header("Location: ".base_url());
     }
-
-    public function registerSpeciality() {
-        $this->views->getView($this, $this->role, "registerSpeciality");
-    }
+    
+    
 }

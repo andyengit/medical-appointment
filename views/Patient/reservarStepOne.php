@@ -4,6 +4,16 @@
             <h2>Reserva tu cita médica</h2>
         </div>
         <!--    STEPS   -->
+        <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) : ?>
+            <div class='ui attached negative message'>
+                <ul class='list'>
+                    <?php foreach ($_SESSION["errors"] as $error) : ?>
+                        <li><?= $error ?></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+            <br>
+        <?php endif ?>
         <div class="ui ordered steps">
             <div class="active step">
                 <div class="content">

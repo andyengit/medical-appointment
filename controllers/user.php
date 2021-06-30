@@ -21,7 +21,6 @@ class User extends Controllers
         $this->views->getView($this,$this->role, "register");
 
     }
-    
     public function validateRegister() {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url());
@@ -44,10 +43,6 @@ class User extends Controllers
     public function validateLogin() {
         if($_SERVER["REQUEST_METHOD"] != "POST")
             header("Location:".base_url());
-
-        if($_POST["ci"] == 1) {
-            
-        }
 
         $user = new UserModel();
 
