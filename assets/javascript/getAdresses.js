@@ -1,4 +1,4 @@
-const getAdresses = function(_callback) {
+const getAdresses = function() {
     let oReq = new XMLHttpRequest();
     
     oReq.onload = function() { 
