@@ -10,3 +10,20 @@ Nuestro proyecto se basa en una pagina web donde un usuario pueda obtener una ci
 
 
 Este proyecto surge de debido a esta pandemia para poder citar con algún doctor se debe dirigir al consultorio de manera presencial, haciendo colas donde puede propagarse el virus fácilmente. También entra como necesidad para facilitar este tipo de diligencias para personas que se les dificulta salir de sus hogares.
+
+//CONFIGURACIÓN DE BASE_URL
+3 - config/parameters.php
+
+//CONFIGURACIÓN EN CSS
+15 - /assets/css/styles.css
+
+//CONFIGURACIÓN EN JS
+41 - /assets/javascript/getAdresses.js
+
+//BASE DE DATOS:
+/database/database.sql
+
+
+
+
+
