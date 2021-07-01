@@ -10,7 +10,12 @@ class Errors extends Controllers{
     {
         $this->views->getView($this,'errors', "notFound");
     }
+    public function building()
+    {
+        $this->views->getView($this,'errors', "building");
+    }
     
 }
 $notFound =new Errors();
 $notFound->notFound();
+

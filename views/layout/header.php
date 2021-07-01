@@ -32,7 +32,7 @@
             } else { ?>
                 <div class="ui grid centered">
                     <i class="ui user icon"></i>
-                    <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">LogOut</a>)</span>
+                    <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
                 <?php
             }
                 ?>

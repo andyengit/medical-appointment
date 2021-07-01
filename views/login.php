@@ -20,19 +20,16 @@
         <?php endif ?>
         <form class="ui form" method="POST" action="<?= base_url() ?>user/validateLogin">
             <div class="field fluid">
-                <label>Cedula de Identidad</label>
+                <label>Cédula de Identidad</label>
                 <input type="number" name="ci" placeholder="Ejemplo - 12345678">
             </div>
             <div class="field">
                 <label>Contraseña</label>
                 <input type="password" name="password" placeholder="Contraseña">
             </div>
-            <button class="ui button basic " type="submit">Submit</button>
+            <button class="ui button basic " type="submit">Entrar</button>
 
         </form>
         <br>
-        <p>¿No tienes una cuenta? <a href="<?= base_url() ?>user/register">Registrate</a></p>
+        <p>¿No tienes una cuenta? <a href="<?= base_url() ?>user/register">Registrarte</a></p>
     </div>
-    <?php  if (isset($_SESSION['errors'])) {
-        $_SESSION['errors'] = NULL;
-    }

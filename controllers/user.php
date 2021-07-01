@@ -2,6 +2,7 @@
 
 class User extends Controllers
 {
+    
 
     public function __construct()
     {
@@ -17,10 +18,16 @@ class User extends Controllers
     public function login()
     {
         $this->views->getView($this, $this->role, "login");
+        if (isset($_SESSION['errors'])) {
+            $_SESSION['errors'] = NULL;
+        }
     }
     public function register()
     {
         $this->views->getView($this, $this->role, "register");
+        if (isset($_SESSION['errors'])) {
+            $_SESSION['errors'] = NULL;
+        }
     }
     public function validateRegister()
     {
@@ -35,6 +42,7 @@ class User extends Controllers
         $user->setCityId($_POST["city"]);
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["password"]);
+        $user->setPasswordL($_POST["password"]);
         $user->setBirthDate($_POST["birthDate"]);
         $user->setPhone($_POST["phone"]);
 

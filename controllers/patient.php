@@ -88,6 +88,17 @@ class Patient extends Controllers
         $this->views->getView($this, $this->role, "lastAppointments");
         $_SESSION['appointmentsList'] = NULL;
         $_SESSION['errors'] = NULL;
+        $_SESSION['messComp'] = NULL;
+    }
+    public function appointmentDel()
+    {
+        if ($_SERVER["REQUEST_METHOD"] != "POST" || empty($_POST['id'])) {
+            header("Location:" . base_url()."patient/appointments");
+        }
+        $patient = new PatientModel();
+        $patient->setAppointmentId($_POST['id']);
+        $patient->appointmentDelete();
+        header("Location:" . base_url()."patient/appointments");
     }
 
 

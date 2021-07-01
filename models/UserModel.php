@@ -12,6 +12,7 @@ class UserModel
     private $db;
     private $cityId;
 
+
     function __construct()
     {
         $this->db = Database::connect();
@@ -21,12 +22,12 @@ class UserModel
 
     function setName(string $name)
     {
-        $this->name = $this->testInput($name);
+        $this->name = ucfirst($this->testInput($name));
     }
 
     function setLastName(string $lastName)
     {
-        $this->lastName = $this->testInput($lastName);
+        $this->lastName = ucfirst($this->testInput($lastName));
     }
 
     function setPassword(string $password)
@@ -35,7 +36,7 @@ class UserModel
     }
     function setPasswordL(string $password)
     {
-        $this->passwordL = $password;
+        $this->passwordL = $this->testInput($password);
     }
 
     function setEmail(string $email)
@@ -53,8 +54,8 @@ class UserModel
         $this->phone = $this->testInput($phone);
     }
 
-    function setCityId(string $cityId) {
-        $this->cityId = $this->testInput($cityId);
+    function setCityId($cityId) {
+        $this->cityId = strClean($cityId);
     }
 
     function setBirthDate(string $birthDate)
@@ -66,7 +67,7 @@ class UserModel
 
     public function search()
     {
-        $reditect = "Location:" . base_url() . "user/login";
+        $redirect = "Location:" . base_url() . "user/login";
         if ($this->validateL()) {
             $query = "SELECT ci, password, role, name, lastname FROM users WHERE ci = ('{$this->ci}')";
             $result = $this->db->query($query);
@@ -87,7 +88,7 @@ class UserModel
                         $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
-                        $reditect = "Location:" . base_url() . "doc/inicio";
+                        $redirect = "Location:" . base_url() . "doc/inicio";
                     }else if ($rows['role'] == 'patient') {
                         $queryThree = "SELECT id FROM patients WHERE ci = '{$this->ci}' ";
                         $saveThree = $this->db->query($queryThree);
@@ -98,12 +99,12 @@ class UserModel
                         $_SESSION['globalRol'] = $rows['role'];
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
-                        $reditect = "Location:" . base_url() . "patient/inicio";
+                        $redirect = "Location:" . base_url() . "patient/inicio";
                     }
                 } else $_SESSION['errors']['password'] = "Contraseña o Cedula Incorrecta.";
             } else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
         }
-        return $reditect;
+        return $redirect;
     }
 
     public function save()
@@ -208,8 +209,27 @@ class UserModel
         if (empty($this->password))
             $_SESSION["errors"]["password"] = "Debe ingresar una contraseña.";
 
-        if (strlen($this->password) < 6)
+        if (strlen($this->passwordL) < 6)
             $_SESSION["errors"]["password"] = "La contraseña debe contener al menos 6 caracteres.";
+        
+        #Validation for Phone
+        if (empty($this->phone))
+        $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico.";
+
+         if (strlen($this->phone) != 11)
+        $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico valido.";
+
+        #Validation for BirthDay
+        if (empty($this->birthDate))
+        $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha de nacimiento";
+
+         if (strtotime($this->birthDate)>time())
+        $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha valida.";
+
+        #Validation for state and Cities
+
+        if (empty($this->cityId))
+        $_SESSION["errors"]["city"] = "Debe seleccionar una dirección";
 
         #Setting session variables for the input values
         $_SESSION["name"] = $this->name;

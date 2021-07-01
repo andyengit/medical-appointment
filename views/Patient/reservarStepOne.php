@@ -7,20 +7,20 @@
         <div class="ui ordered steps">
             <div class="active step">
                 <div class="content">
-                    <div class="title">Busqueda</div>
+                    <div class="title">Búsqueda</div>
                     <div class="description">Selecciona el donde y cuando</div>
                 </div>
             </div>
             <div class="step">
                 <div class="content">
                     <div class="title">Disponibilidad</div>
-                    <div class="description">Selecciona la Hora y el médico</div>
+                    <div class="description">Selecciona la hora y el médico</div>
                 </div>
             </div>
             <div class="step">
                 <div class="content">
-                    <div class="title">Confirmacion</div>
-                    <div class="description">¡Reservacion lista!</div>
+                    <div class="title">Confirmación</div>
+                    <div class="description">¡ Reservación lista!</div>
                 </div>
             </div>
         </div>

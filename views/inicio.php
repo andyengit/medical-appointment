@@ -5,6 +5,7 @@
                     <div class="contenedor-text">
                         <b>TU NUEVO PORTAL PARA AGENDAR CITAS MEDICAS</b>
                         <p>CON TUS DOCTORES DE PREFERENCIA</p>
+                        <p>INICIA SESIÓN PARA RESERVAR</p>
                     </div>
                 </div>
             </section>

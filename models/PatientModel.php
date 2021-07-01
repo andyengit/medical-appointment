@@ -7,6 +7,7 @@ class PatientModel
     private $appointmentsDoc;
     private $appointmentsTime;
     private $dateNow;
+    private $appointmentId;
 
     function __construct()
     {
@@ -14,6 +15,11 @@ class PatientModel
     }
     public function setDateNow(){
         $this->dateNow =  date('Y-m-d',time());
+    }
+
+    public function setAppointmentId($date)
+    {
+        $this->appointmentId = strClean($date);
     }
 
     public function setId($date)
@@ -51,7 +57,7 @@ class PatientModel
     }
     public function searchAppointments()
     {
-        $sql = "SELECT USERS.NAME,USERS.LASTNAME,USERS.CI,DOCTORS.speciality_id,doctors.start_hour,
+        $sql = "SELECT users.name,users.lastname,users.ci,doctors.speciality_id,doctors.start_hour,
             doctors.end_hour,doctors.cost,specialities.name,doctors.id FROM USERS INNER JOIN doctors ON users.ci = doctors.ci INNER JOIN
             specialities ON specialities.id = doctors.speciality_id WHERE
             doctors.speciality_id = ('{$this->appointmentsSpecialities}')";
@@ -94,7 +100,7 @@ class PatientModel
     public function insertAppointment(): bool
     {
         $sql = "INSERT INTO appointments VALUES (
-        NULL,'{$this->appointmentsDoc}','{$this->patientId}','{$this->appointmentsDate}','{$this->appointmentsTime}')";
+        NULL,'{$this->appointmentsDoc}','{$this->patientId}','{$this->appointmentsDate}','{$this->appointmentsTime}','1','0')";
         $query = $this->db->query($sql);
         if ($query) {
             return true;
@@ -104,7 +110,7 @@ class PatientModel
         $sql = "SELECT appointments.id,users.name,users.lastname,appointments.a_date,appointments.a_time FROM appointments 
         INNER JOIN doctors ON doctors.id = appointments.doctor_id 
         INNER JOIN users ON doctors.ci = users.ci 
-        WHERE appointments.patient_id = ('{$this->patientId}') AND appointments.a_date >= ('{$this->dateNow}')
+        WHERE appointments.patient_id = ('{$this->patientId}') AND appointments.a_date >= ('{$this->dateNow}') AND appointments.status = ('1')
         ORDER BY appointments.a_date,appointments.a_time DESC;";
         $query = $this->db->query($sql);
         $result = $query->fetch_all();
@@ -115,7 +121,7 @@ class PatientModel
         }
     }
     public function appointmentsLastList(){
-        $sql = "SELECT appointments.id,users.name,users.lastname,appointments.a_date,appointments.a_time FROM appointments 
+        $sql = "SELECT appointments.id,users.name,users.lastname,appointments.a_date,appointments.a_time,appointments.status,appointments.presence FROM appointments 
         INNER JOIN doctors ON doctors.id = appointments.doctor_id 
         INNER JOIN users ON doctors.ci = users.ci 
         WHERE appointments.patient_id = ('{$this->patientId}') 
@@ -125,7 +131,17 @@ class PatientModel
         if(sizeof($result) !=0 ){
             $_SESSION['appointmentsLastList'] = $result;
         } else{
-            $_SESSION['errors']['appointmentEmpty'] = "No Hay citas Registradas";
+            $_SESSION['errors']['appointmentEmpty'] = "No hay citas registradas";
+        }
+    }
+
+    public function appointmentDelete(){
+        $sql = "UPDATE appointments SET status = '0' WHERE id = '{$this->appointmentId}'";
+        $query = $this->db->query($sql);
+        if(!$query){
+            $_SESSION['errors']['cantDelete'] = "No se pudo borrar la cita.";
+        } else {
+            $_SESSION['messComp'] = "Cita eliminada correctamente.";
         }
     }
 }

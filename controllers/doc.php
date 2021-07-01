@@ -18,6 +18,28 @@ class Doc extends Controllers
         $doc->setDateNow();
         $doc->appointmentsList();
         $this->views->getView($this,$this->role, "appointments");
+        $_SESSION['appointmentsList'] = NULL;
+
+    }
+    public function appointmentsLast(){
+
+        $Doc = new DocModel();
+        $Doc->setId($_SESSION['globalId']);
+        $Doc->appointmentsLastList();
+        $this->views->getView($this, $this->role, "lastAppointments");
+        $_SESSION['appointmentsLastList'] = NULL;
+        $_SESSION['errors'] = NULL;
+        $_SESSION['messComp'] = NULL;
+    }
+
+    public function appointmentUpdate(){
+        if ($_SERVER["REQUEST_METHOD"] != "POST" || empty($_POST['id'])) {
+            header("Location:" . base_url()."doc/appointments");
+        }
+        $doc = new DocModel();
+        $doc->setAppointmentId($_POST['id']);
+        $doc->appointmentUpdate();
+        header("Location:" . base_url()."doc/appointments");
 
     }
     

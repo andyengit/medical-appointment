@@ -4,7 +4,7 @@ const BASE_URL = "http://localhost/proyecto/";
 //LLAMADO A LA BASE DE DATOS
 require_once("config/database.php");
 //DEFINIMOS TIEMPO DE VENEZUELA
-date_default_timezone_set("America/caracas");
+date_default_timezone_set("America/caracas"); 
 
 //CONFIGURACION URL CONTROLLADOR/METODO
 

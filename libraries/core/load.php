@@ -8,8 +8,8 @@ if (file_exists($controllerFile)) {
 	if (method_exists($controller, $method)) {
 		$controller->{$method}($params);
 	} else {
-		require_once ("controllers/error.php");
+		require_once ("controllers/errors.php");
 	}
 } else {
-	require_once ("controllers/error.php");
+	require_once ("controllers/errors.php");
 }

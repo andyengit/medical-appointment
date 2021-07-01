@@ -5,7 +5,7 @@
             <a href="<?= base_url() ?>patient/stepOne">
                 <button class="ui basic button primary">
                     <i class="icon angle double left"></i>
-                    Atras
+                    Atrás
                 </button>
             </a>
             <h2>Reserva tu cita médica</h2>
@@ -27,19 +27,19 @@
         <div class="ui ordered steps">
             <div class="completed step">
                 <div class="content">
-                    <div class="title">Busqueda</div>
+                    <div class="title">Búsqueda</div>
                     <div class="description">Selecciona el donde y cuando</div>
                 </div>
             </div>
             <div class="active step">
                 <div class="content">
                     <div class="title">Disponibilidad</div>
-                    <div class="description">Selecciona la Hora y el médico</div>
+                    <div class="description">Selecciona la hora y el médico</div>
                 </div>
             </div>
             <div class="step">
                 <div class="content">
-                    <div class="title">Confirmacion</div>
+                    <div class="title">Confirmación</div>
                     <div class="description">¡Reservacion lista!</div>
                 </div>
             </div>
