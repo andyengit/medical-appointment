@@ -3,7 +3,7 @@
                 <div class="contenedor">
                     <img src="<?=base_url()?>assets/img/noticia.jpg" />
                     <div class="contenedor-text">
-                        <b>TU NUEVO PORTAL PARA AGENDAR CITAS MEDICAS</b>
+                        <b>TU NUEVO PORTAL PARA AGENDAR CITAS MÉDICAS</b>
                         <p>CON TUS DOCTORES DE PREFERENCIA</p>
                     </div>
                 </div>

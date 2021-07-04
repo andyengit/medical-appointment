@@ -77,4 +77,4 @@
 
     </div>
     
-<script src="../assets/javascript/getAdresses.js"></script>
+<script src="<?=base_url()?>assets/javascript/getAdresses.js"></script>

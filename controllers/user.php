@@ -29,6 +29,22 @@ class User extends Controllers
             $_SESSION['errors'] = NULL;
         }
     }
+    public function admin(){
+        $this->views->getView($this, $this->role, "admin");
+    }
+
+    public function adminLogin(){ 
+        if ($_SERVER["REQUEST_METHOD"] != "POST")
+        header("Location:" . base_url());
+
+        $center = new UserModel;
+        $center->setAdminName($_POST['nameAdmin']);
+        $center->setPasswordL($_POST['password']);
+        $header = $center->adminLogin();
+
+        header($header);
+    }
+
     public function validateRegister()
     {
         if ($_SERVER["REQUEST_METHOD"] != "POST")
@@ -53,17 +69,7 @@ class User extends Controllers
     public function validateLogin()
     {
      
-        if ($_SERVER["REQUEST_METHOD"] != "POST")
-            header("Location:" . base_url());
-
-        if ($_POST["ci"] == 1) {
-            $center = new CenterModel();
-            $center->setPassword($_POST["password"]);
-            $header = $center->login();
-            header($header);
-        }
-
-
+    
         $user = new UserModel();
 
         $user->setCi($_POST['ci']);

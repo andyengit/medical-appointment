@@ -11,6 +11,7 @@ class UserModel
     private $birthDate;
     private $db;
     private $cityId;
+    private $adminUser;
 
 
     function __construct()
@@ -54,13 +55,19 @@ class UserModel
         $this->phone = $this->testInput($phone);
     }
 
-    function setCityId($cityId) {
+    function setCityId($cityId)
+    {
         $this->cityId = strClean($cityId);
     }
 
     function setBirthDate(string $birthDate)
     {
         $this->birthDate = $this->testInput($birthDate);
+    }
+
+    public function setAdminName(string $date)
+    {
+        $this->adminUser = $this->testInput($date);
     }
 
     //FUNCTIONS
@@ -89,7 +96,7 @@ class UserModel
                         $_SESSION['globalCI'] = $this->ci;
                         $_SESSION['logIn'] = true;
                         $redirect = "Location:" . base_url() . "doc/inicio";
-                    }else if ($rows['role'] == 'patient') {
+                    } else if ($rows['role'] == 'patient') {
                         $queryThree = "SELECT id FROM patients WHERE ci = '{$this->ci}' ";
                         $saveThree = $this->db->query($queryThree);
                         $arrId = $saveThree->fetch_array();
@@ -105,6 +112,42 @@ class UserModel
             } else $_SESSION['errors']['ci'] = "No se ha encontrado la cedula.";
         }
         return $redirect;
+    }
+    public function adminLogin()
+    {
+        $redirect = "Location:" . base_url() . "user/admin";
+        if ($this->validateA()) {
+            $sql = "SELECT id,username,password FROM center_admin WHERE username = '{$this->adminUser}'";
+            $query = $this->db->query($sql);
+            $result = $query->fetch_all();
+            if (password_verify($this->passwordL, $result[0][2])) {
+                $_SESSION['globalId'] = $result[0][0];
+                $_SESSION['globalRol'] = 'center';
+                $_SESSION['logIn'] = true;
+                $redirect = "Location:" . base_url() . "center/inicio";
+            }else{
+                $_SESSION['errors']['Incorrecto'] = "Contraseña y/o Usuario incorrecto.";
+            }
+        }
+        return $redirect;
+    }
+
+    private function validateA(): bool
+    {
+        $_SESSION["errors"] = [];
+
+        #Validation for Name
+        if (empty($this->adminUser))
+            $_SESSION["errors"]["user"] = "Debe ingresar su nombre de usuario";
+        if (!preg_match("/^[a-zA-Z]*$/", $this->adminUser))
+            $_SESSION["errors"]["name"] = "Introduzca solamente letras y espacios.";
+        #Validation for password
+        if (empty($this->passwordL))
+            $_SESSION["errors"]["password"] = "Debe ingresar una contraseña.";
+
+        if (!empty($_SESSION['errors'])) {
+            return false;
+        } else return true;
     }
 
     public function save()
@@ -134,6 +177,7 @@ class UserModel
         return $redirect;
     }
 
+
     public function verify(): bool
     {
         $query = "SELECT ci,email FROM users WHERE ci = ('{$this->ci}') OR email = ('{$this->email}');";
@@ -146,6 +190,7 @@ class UserModel
             return false;
         } else return true;
     }
+
 
     private function validateL(): bool
     {
@@ -211,25 +256,25 @@ class UserModel
 
         if (strlen($this->passwordL) < 6)
             $_SESSION["errors"]["password"] = "La contraseña debe contener al menos 6 caracteres.";
-        
+
         #Validation for Phone
         if (empty($this->phone))
-        $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico.";
+            $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico.";
 
-         if (strlen($this->phone) != 11)
-        $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico valido.";
+        if (strlen($this->phone) != 11)
+            $_SESSION["errors"]["phone"] = "Debe ingresar un numero telefónico valido.";
 
         #Validation for BirthDay
         if (empty($this->birthDate))
-        $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha de nacimiento";
+            $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha de nacimiento";
 
-         if (strtotime($this->birthDate)>time())
-        $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha valida.";
+        if (strtotime($this->birthDate) > time())
+            $_SESSION["errors"]["birthDate"] = "Debe ingresar una fecha valida.";
 
         #Validation for state and Cities
 
         if (empty($this->cityId))
-        $_SESSION["errors"]["city"] = "Debe seleccionar una dirección";
+            $_SESSION["errors"]["city"] = "Debe seleccionar una dirección";
 
         #Setting session variables for the input values
         $_SESSION["name"] = $this->name;

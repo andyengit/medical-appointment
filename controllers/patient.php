@@ -79,6 +79,7 @@ class Patient extends Controllers
         $this->views->getView($this, $this->role, "appointments");
         $_SESSION['appointmentsList'] = NULL;
         $_SESSION['errors'] = NULL;
+        $_SESSION['messComp'] = NULL;
     }
     public function appointmentsLast(){
 

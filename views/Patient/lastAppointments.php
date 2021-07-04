@@ -33,7 +33,12 @@
                                         <td>Dr/a. <?= $key[1] . " " . $key[2] ?></td>
                                         <td><?= $key[3] ?></td>
                                         <td><?= $key[4] ?></td>
-                                        <td><?= ($key[6] == 1) ? '<i class="ui check green icon"></i>' : '<i class="ui x red icon"></i>' ?></td>
+                                        <td><?php if ($key[5] == 1 && $key[6] == 0 ){
+                                        echo '<i class="ui clock grey icon"></i>';
+                                            
+                                        }else if($key[5] == 0 && $key[6] == 1 ){
+                                        echo '<i class="ui check green icon"></i>';
+                                        }else echo '<i class="ui x red icon"></i>';?></td>
                                     </tr>
                             <?php }
                             }else echo "<h3>" . $_SESSION['errors']['appointmentEmpty'] . "</h3>"; ?>

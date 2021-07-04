@@ -28,15 +28,21 @@
             if ($_SESSION['logIn'] == false) { ?>
                 <a href="<?= base_url() ?>user/login"><button class="ui tiny primary button">ENTRAR</button></a>
                 <a href="<?= base_url() ?>user/register"><button class="ui inverted tiny primary button">REGISTRARSE</button></a>
-            <?php
-            } else { ?>
-                <div class="ui grid centered">
-                    <i class="ui user icon"></i>
-                    <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
                 <?php
+            } else {
+                if ($_SESSION['globalRol'] == 'center') { ?>
+                    <div class="ui grid centered">
+                        <i class="ui user icon"></i>
+                        <span>Admin Revemed (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
+                <?php } else { ?>
+                    <div class="ui grid centered">
+                        <i class="ui user icon"></i>
+                        <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
+                <?php
+                }
             }
                 ?>
-                </div>
+                    </div>
 
 
 

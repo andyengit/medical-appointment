@@ -49,8 +49,11 @@
         <!--    FORM  -->
         <!--    FORM  -->
         <br><br><br>
+        <?php if ($_SESSION['docInfo'] != NULL){?>
         <div class="ui centered grid">
             <table class="ui very basic collapsing celled table">
+            
+            
                 <thead>
                     <tr>
                         <th>Doctor</th>
@@ -103,5 +106,7 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <?php } else echo "<div><h2>No hay Doctores Disponibles</h2></div>?>";?>
+            
         </div>
     </div>
