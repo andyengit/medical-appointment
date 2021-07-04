@@ -1,7 +1,7 @@
 const getAdresses = function() {
     let oReq = new XMLHttpRequest();
-
-    oReq.onload = function() {
+    
+    oReq.onload = function() { 
         let response = JSON.parse(this.responseText);
 
         let states = response.map(el => el[0]);
@@ -10,7 +10,7 @@ const getAdresses = function() {
         const stateSelect = document.getElementById("state");
         const citySelect = document.getElementById("city");
 
-        for (const state of states) {
+        for(const state of states) {
             const option = document.createElement("option");
             option.value = state;
             option.text = state;
@@ -22,16 +22,16 @@ const getAdresses = function() {
             const indx = stateSelect.selectedIndex;
             const selected = stateSelect.options[indx].value;
 
-            while (citySelect.options.length > 0) {
+            while(citySelect.options.length > 0) {
                 citySelect.remove(0);
             }
 
-            for (const el of response) {
-                if (selected === el[0]) {
+            for(const el of response) {
+                if(selected === el[0]) {
                     const option = document.createElement("option");
                     option.value = el[2];
                     option.text = el[1];
-
+                    
                     citySelect.appendChild(option);
                 }
             }
@@ -43,3 +43,5 @@ const getAdresses = function() {
 };
 
 getAdresses();
+
+

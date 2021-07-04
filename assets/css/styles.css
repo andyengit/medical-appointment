@@ -52,6 +52,12 @@ table tr {
     border-top: 1px solid;
 }
 
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 
 /* --------------------------------------------------
 					topHeader
@@ -182,12 +188,58 @@ main {
 }
 
 
+/*------- NAV-MENU -------------*/
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80vw;
+}
+
+.nav-sel {
+    display: flex;
+    background-color: var(--main-color);
+    flex: 1 1 18rem;
+    height: 9rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+.nav-menu div a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nav-menu div:hover {
+    opacity: 0.8;
+}
+
+.nav-menu .nav-sel a {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: auto;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.nav-menu .nav-sel a b {
+    padding-top: 0.6rem;
+    text-align: center;
+}
+
+
 /*---------------------------------------------------
 				FOOTER
 -----------------------------------------------------*/
 
 footer {
-    position: absolute;
+    flex: flex-end;
+    position: relative;
     width: 100%;
     bottom: 0;
     display: flex;
