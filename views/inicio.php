@@ -9,11 +9,10 @@
                     </div>
                 </div>
             </section>
-                <main>
-                <!--NAVEGACION-->
-                <section class="nav-menu">
-                    <div class="nav-sel"><a href="<?=base_url()?>user/login"><span><i class="ui icon huge calendar outline"></i></span><b>RESERVAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="<?=base_url()?>user/login"><span><i class="ui icon huge syringe"></i></span><b>RESERVAR EXÁMENES</b></a></div>
-                    <div class="nav-sel"><a href="<?=base_url()?>user/login"><span><i class="ui icon huge book"></i></span><b>CONSULTAR CITA</b></a></div>
-                    <div class="nav-sel"><a href="<?=base_url()?>user/login"><span><i class="ui icon huge hospital"></i></span><b>NOSOTROS</b></a></div>
-                </section>
+            <!--NAVEGACION-->
+            <section class="nav-menu">
+                <div class="nav-sel"><a href="<?= base_url() ?>user/login"><span><i class="ui icon huge calendar outline"></i></span><b>RESERVAR CITA</b></a></div>
+                <div class="nav-sel"><a href="<?= base_url() ?>user/login"><span><i class="ui icon huge syringe"></i></span><b>RESERVAR EXÁMENES</b></a></div>
+                <div class="nav-sel"><a href="<?= base_url() ?>user/login"><span><i class="ui icon huge book"></i></span><b>CONSULTAR CITA</b></a></div>
+                <div class="nav-sel"><a href="<?= base_url() ?>user/nosotros"><span><i class="ui icon huge hospital"></i></span><b>NOSOTROS</b></a></div>
+            </section>

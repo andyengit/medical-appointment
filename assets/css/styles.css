@@ -52,11 +52,6 @@ table tr {
     border-top: 1px solid;
 }
 
-body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 
 /* --------------------------------------------------
@@ -120,26 +115,6 @@ body {
 				MODULOS
 -----------------------------------------------------*/
 
-main {
-    justify-content: center;
-    align-items: center;
-    min-height: 30vw;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    max-width: 85vw;
-}
-
-.mid {
-    max-width: 85vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 30vw;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
 
 
 /*---------------------------------------------------

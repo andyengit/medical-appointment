@@ -1,7 +1,7 @@
-<main>
-    <div class="cont">
+<div class="ui container centered grid">
+    <div class="ui segment">
         <div>
-            <a href="<?= base_url() ?>patient/stepTwo?Especialidad=<?=$_SESSION['appointment']['specialities']?>&fecha=<?=$_SESSION['appointment']['date']?>">
+            <a href="<?= base_url() ?>patient/stepTwo?Especialidad=<?= $_SESSION['appointment']['specialities'] ?>&fecha=<?= $_SESSION['appointment']['date'] ?>">
                 <button class="ui basic button primary">
                     <i class="icon angle double left"></i>
                     Atrás
@@ -54,5 +54,4 @@
                 </div>
             </form>
         </div>
-
-    </div>
+        <br>

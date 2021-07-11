@@ -101,6 +101,18 @@ class CenterModel
         }
     }
 
+
+    public function getReportDoc(){
+        $sql = "SELECT doctors.id,users.ci,users.name,users.lastname,specialities.name,users.phone 
+        FROM users 
+        INNER JOIN doctors ON users.ci = doctors.ci
+        INNER JOIN specialities ON specialities.id = doctors.speciality_id
+        WHERE users.role = 'doc'
+        ORDER BY doctors.id ASC";
+        $query = $this->db->query($sql);
+        $_SESSION['result'] = $query->fetch_all();
+    }
+
     public function insertSpeciality()
     {
         $sql = "INSERT INTO specialities VALUES (NULL,'{$this->specialityName}')";
@@ -137,8 +149,8 @@ class CenterModel
         }
     }
 
-    private function validateRegisterDoc(): bool
-    {
+        
+    private function validateRegisterDoc() {
         $_SESSION["errors"] = [];
 
         #Validation for name and last name
@@ -232,7 +244,7 @@ class CenterModel
         return true;
     }
 
-    private function testInput(string $data): string
+    private function testInput(string $data)
     {
         $data = trim($data);
         $data = stripslashes($data);

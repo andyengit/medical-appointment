@@ -1,5 +1,7 @@
-</main>
-<footer>
+</div>
+</div>
+<br><br><br>
+<footer class="ui footer">
 	<div class="footer-img">
 		<img src="<?= base_url() ?>assets/img/estetos.png" alt="estetoscopio">
 	</div>
@@ -12,8 +14,8 @@
 			<li><a href="https://aulabqto.iujoac.org.ve/user/view.php?id=2568&course=1180">Nataly Megurdijian</a></li>
 		</ul>
 	</div>
+
 </footer>
 </body>
-
 
 </html>

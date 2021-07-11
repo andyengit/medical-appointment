@@ -1,5 +1,5 @@
-<main>
-    <div class="container">
+<div class="ui container">
+    <div class="ui segment">
 
         <h2>CITAS</h2>
         <div class="ui grid">
@@ -15,10 +15,6 @@
             </div>
             <div class="twelve wide stretched column">
                 <div class="ui segment">
-
-
-
-
                     <?php if (isset($_SESSION['appointmentsLastList'])) { ?>
                         <table class="ui  blue selectable celled  table">
                             <thead>
@@ -46,4 +42,3 @@
                 </div>
             </div>
         </div>
-    </div>

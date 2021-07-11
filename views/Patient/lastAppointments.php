@@ -1,5 +1,5 @@
-<main>
-    <div class="container">
+<div class="ui container">
+    <div class="ui segment">
 
         <h2>CITAS</h2>
         <div class="ui grid">
@@ -47,4 +47,3 @@
                 </div>
             </div>
         </div>
-    </div>

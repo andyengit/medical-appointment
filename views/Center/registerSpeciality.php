@@ -5,11 +5,8 @@
                 <a class="item" href="<?= base_url() ?>center/inicio">
                     Inicio
                 </a>
-                <a class="item">
-                    Status
-                </a>
-                <a class="item">
-                    Doctores
+                <a class="item" href="<?= base_url() ?>center/report">
+                Status y reportes
                 </a>
                 <a class="active item" href="<?= base_url() ?>center/registerSpeciality">
                     Registros

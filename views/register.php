@@ -1,8 +1,6 @@
-<?php
-?>
-<main class="mid">
+<div class="ui container">
+    <div class="ui segment">
 
-    <div class="cont">
 
         <h2>Registro</h2>
 
@@ -52,7 +50,7 @@
             <div class="two fields">
                 <div class="field">
                     <label>Fecha de Nacimiento:</label>
-                    <input type="date" name="birthDate" id="birthDate" max="<?=date('Y-m-d',time())?>">
+                    <input type="date" name="birthDate" id="birthDate" max="<?= date('Y-m-d', time()) ?>">
                 </div>
                 <div class="field">
                     <label>Número de teléfono:</label>
@@ -74,7 +72,6 @@
 
         <br>
         <p>¿Ya tienes una cuenta? <a href="<?= base_url() ?>user/login">Ingresar</a></p>
-
     </div>
-    
-<script src="<?=base_url()?>assets/javascript/getAdresses.js"></script>
+</div>
+<script src="<?= base_url() ?>assets/javascript/getAdresses.js"></script>

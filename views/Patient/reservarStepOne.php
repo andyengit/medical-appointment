@@ -1,5 +1,5 @@
-<main class="mid">
-    <div class="cont">
+<div class="ui container centered grid">
+    <div class="ui segment">
         <div>
             <h2>Reserva tu cita médica</h2>
         </div>
@@ -25,14 +25,14 @@
             </div>
         </div>
         <!--    FORM  -->
-        <form class="ui form" method="GET" action="<?=base_url()?>patient/stepTwo">
+        <form class="ui form" method="GET" action="<?= base_url() ?>patient/stepTwo">
             <div class="fields">
                 <div class="six wide field">
                     <label>Especialidad</label>
                     <select class="ui search dropdown" name="Especialidad">
                         <option value="">Seleccionar</option>
-                        <?php foreach ($_SESSION['specialities'] as $specialities){?>
-                            <option value="<?=$specialities[0]?>"><?=$specialities[1]?></option> 
+                        <?php foreach ($_SESSION['specialities'] as $specialities) { ?>
+                            <option value="<?= $specialities[0] ?>"><?= $specialities[1] ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -48,4 +48,3 @@
             </div>
             <button class="ui button primary" type="submit">Buscar</button>
         </form>
-    </div>

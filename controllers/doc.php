@@ -42,6 +42,7 @@ class Doc extends Controllers
         header("Location:" . base_url()."doc/appointments");
 
     }
+
     
     public function LogOut(){
         session_destroy();

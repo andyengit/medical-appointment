@@ -22,6 +22,9 @@ class User extends Controllers
             $_SESSION['errors'] = NULL;
         }
     }
+    public function nosotros(){
+        $this->views->getView($this, $this->role, "nosotros");
+    }
     public function register()
     {
         $this->views->getView($this, $this->role, "register");

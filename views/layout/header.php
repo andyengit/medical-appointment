@@ -1,19 +1,24 @@
-<html lang="ES">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>REVEMED</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/estetos.png" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/semantic.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.css?ts=<?=time()?>">
     <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/28d6ce3668.js" crossorigin="anonymous"></script>
-    <script src="assets/javascript/semantic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="<?= base_url() ?>assets/javascript/semantic.js"></script>
+    <title>REVEMED</title>
+
 </head>
 
 <body>
     <!--HEADER-->
+    
     <header class="topHeader">
         <div class="logo">
             <h1>REVEMED</h1>
@@ -34,18 +39,15 @@
                     <div class="ui grid centered">
                         <i class="ui user icon"></i>
                         <span>Admin Revemed (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
-                <?php } else { ?>
-                    <div class="ui grid centered">
-                        <i class="ui user icon"></i>
-                        <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
-                <?php
+                    <?php } else { ?>
+                        <div class="ui grid centered">
+                            <i class="ui user icon"></i>
+                            <span><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?> (<a href="<?= base_url() . $_SESSION['globalRol'] ?>/LogOut">Cerrar Sesión</a>)</span>
+                    <?php
                 }
             }
-                ?>
+                    ?>
+                        </div>
                     </div>
-
-
-
-
-        </div>
     </header>
+    

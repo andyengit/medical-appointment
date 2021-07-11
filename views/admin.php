@@ -1,5 +1,5 @@
-<main class="mid">
-    <div class="cont">
+<div class="ui container">
+    <div class="ui segment">
 
         <h4 class="ui dividing">Administrador</h4>
         <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) : ?>
@@ -29,4 +29,3 @@
             </div>
             <button class="ui button basic " type="submit">Entrar</button>
         </form>
-    </div>
