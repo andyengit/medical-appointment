@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `center_admin` (
 --
 
 INSERT INTO `center_admin` (`id`, `username`, `password`) VALUES
-(1, 'CENTRO', 'albdrt23$%0e##e456');
+(1, 'root', '$2y$04$41MiqQAcOXZOYEIrUj7rm.V.tX5AwHlW2DXqfC97wOwbFiN/jOUcu');
 
 -- --------------------------------------------------------
 
